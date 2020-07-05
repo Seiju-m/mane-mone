@@ -6,4 +6,4 @@ def hello_world():
     return '<html><body><h1>sample</h1></body></html>'
  
 if __name__ == '__main__':
-    app.run()
+    app.run(port=process.env.PORT || 5000)
