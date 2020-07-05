@@ -2,7 +2,6 @@ import os
 import io
 import time
 from flask import Flask, render_template, request, redirect, url_for, send_from_directory, session
-from werkzeug import secure_filename
 app = Flask(__name__)
 
 # <--プログラム-->
