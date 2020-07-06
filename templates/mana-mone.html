@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>mana-mone</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-</head>
-
-<body>
+{% extends "base.html" %}
+{% block content %}
 
     <nav class="navbar navbar-dark bg-dark">
         <a href="#" class="navbar-brand">Manage Money</a>
@@ -20,7 +9,7 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-1">収入</div>
-        <div class="col-sm-4">{{ data.income }}</div>
+        <div class="col-sm-4">￥{{ data.income }}</div>
     </div>
     <br>
     <div class="row title">
@@ -33,9 +22,9 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <div class="card" style="width:18rem;">
-                <div class="card-header food">食費（設定：）</div>
+                <div class="card-header food">食費（設定：￥{{ data.food_st }}）<i class="far fa-edit"></i></div>
                 <div class="card-body food">
-                    ￥50,000
+                    ￥{{ data.food_ex }}
                 </div>
             </div>
         </div>
@@ -44,7 +33,7 @@
             <div class="card" style="width:18rem;">
                 <div class="card-header fixed-ex">家賃</div>
                 <div class="card-body">
-                    ￥50,000
+                    ￥{{ data.rent_cost }}
                 </div>
             </div>
         </div>
@@ -54,9 +43,9 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <div class="card" style="width:18rem;">
-                <div class="card-header daily">日用品（設定：）</div>
+                <div class="card-header daily">日用品（設定：￥{{ data.daily_st }}）</div>
                 <div class="card-body daily">
-                    ￥50,000
+                    ￥{{ data.daily_ex }}
                 </div>
             </div>
         </div>
@@ -65,7 +54,7 @@
             <div class="card" style="width:18rem;">
                 <div class="card-header fixed-ex">奨学金</div>
                 <div class="card-body">
-                    ￥50,000
+                    ￥{{ data.scholar }}
                 </div>
             </div>
         </div>
@@ -75,9 +64,9 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <div class="card" style="width:18rem;">
-                <div class="card-header hobby">趣味（設定：）</div>
+                <div class="card-header hobby">趣味（設定：￥{{ data.hobby_st }}）</div>
                 <div class="card-body hobby">
-                    ￥50,000
+                    ￥{{ data.hobby_ex }}
                 </div>
             </div>
         </div>
@@ -86,7 +75,7 @@
             <div class="card" style="width:18rem;">
                 <div class="card-header fixed-ex">光熱費</div>
                 <div class="card-body">
-                    ￥50,000
+                    ￥{{ data.utility_cost }}
                 </div>
             </div>
         </div>
@@ -98,7 +87,7 @@
             <div class="card" style="width:18rem;">
                 <div class="card-header last">残高</div>
                 <div class="card-body last">
-                    ￥50,000
+                    ￥{{ data.last_ex }}
                 </div>
             </div>
         </div>
@@ -107,14 +96,10 @@
             <div class="card" style="width:18rem;">
                 <div class="card-header fixed-ex">通信費・その他</div>
                 <div class="card-body">
-                    ￥50,000
+                    ￥{{ data.other }}
                 </div>
             </div>
         </div>
     </div>
 
-  
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
-</body>
-</html>          
+    {% endblock %}       
