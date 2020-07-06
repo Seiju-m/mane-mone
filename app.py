@@ -46,7 +46,7 @@ def load_user(user_id):
 @login_required
 def protected():
     #data = User.query.filter_by(user='tfjkv').first()
-    title = 'トップページ'
+    title = 'aaa'
     return render_template("mana-mone.html", title=title)
 
 # ログインパス
