@@ -56,7 +56,7 @@ def login():
             # ユーザーが存在した場合はログイン
             login_user(users.get(user_check[request.form["username"]]["id"]))
             data = User.query.filter_by(user='tfjkv').first()
-            return render_template("mana-mone.html",  title=data)
+            return render_template("mana-mone.html",  data=data)
         else:
             return abort(401)
     else:
