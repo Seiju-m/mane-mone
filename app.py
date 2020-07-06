@@ -45,10 +45,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return Response('''
-    logout success!<br />
-    <a href="/">login</a>
-    ''')
+    return render_template("logout.html")
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
