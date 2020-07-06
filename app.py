@@ -57,7 +57,8 @@ def login():
         if(request.form["username"] in user_check and request.form["password"] == user_check[request.form["username"]]["password"]):
             # ユーザーが存在した場合はログイン
             login_user(users.get(user_check[request.form["username"]]["id"]))
-            return render_template("mana-mone.html")
+            title = 'aaa'
+            return render_template("mana-mone.html",  title=title)
         else:
             return abort(401)
     else:
