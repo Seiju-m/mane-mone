@@ -15,7 +15,7 @@ def index2():
     return 'Hello test!'
 
 @app.route("/index") #アプリケーション/indexにアクセスが合った場合
-def index():
+def index3():
    return render_template('index.html')
 
 if __name__ == '__main__':
