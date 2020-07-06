@@ -1,108 +1,113 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <nav class="navbar navbar-dark bg-dark">
-        <a href="#" class="navbar-brand">Manage Money</a>
-        <a href="/logout" align="right">logout</a>
-    </nav>
-    <div id="test">
-            [[ hello ]]
-        </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-1">収入</div>
-        <div class="col-sm-4">￥{{ data.income }}</div>
-    </div>
-    <br>
-    <div class="row title">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">使用可能</div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">固定費</div>
-    </div>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header food">食費（設定：￥{{ data.food_st }}）<i class="far fa-edit fa-pull-right"></i></div>
-                <div class="card-body food">
-                    ￥{{ data.food_ex }}
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header fixed-ex">家賃</div>
-                <div class="card-body">
-                    ￥{{ data.rent_cost }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header daily">日用品（設定：￥{{ data.daily_st }}）</div>
-                <div class="card-body daily">
-                    ￥{{ data.daily_ex }}
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header fixed-ex">奨学金</div>
-                <div class="card-body">
-                    ￥{{ data.scholar }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header hobby">趣味（設定：￥{{ data.hobby_st }}）</div>
-                <div class="card-body hobby">
-                    ￥{{ data.hobby_ex }}
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header fixed-ex">光熱費</div>
-                <div class="card-body">
-                    ￥{{ data.utility_cost }}
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <div class="row">
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header last">残高</div>
-                <div class="card-body last">
-                    ￥{{ data.last_ex }}
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-2"></div>
-        <div class="col-sm-2">
-            <div class="card" style="width:18rem;">
-                <div class="card-header fixed-ex">通信費・その他</div>
-                <div class="card-body">
-                    ￥{{ data.other }}
-                </div>
-            </div>
-        </div>
-    </div>
+<nav class="navbar navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Manage Money</a>
+    <a href="/logout" align="right">logout</a>
+</nav>
+<div id="app">
+        <button @click="plus"></button>
+        <div>[[ count ]]</div>
+   </div>
 
-    {% endblock %}       
+<br>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-1">収入</div>
+    <div class="col-sm-4">￥{{ data.income }}</div>
+</div>
+<br>
+<div class="row title">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-3">使用可能</div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">固定費</div>
+</div>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-3">
+        <div class="card" style="width:18rem;" id="edits">
+            <div class="card-header food">
+                食費（設定：￥{{ data.food_st }}）
+                <i class="far fa-edit fa-pull-right"  @click="edit"></i>
+            </div>
+            <div class="card-body food">
+                ￥{{ data.food_ex }}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">
+        <div class="card" style="width:18rem;">
+            <div class="card-header fixed-ex">家賃</div>
+            <div class="card-body">
+                ￥{{ data.rent_cost }}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-3">
+        <div class="card" style="width:18rem;">
+            <div class="card-header daily">日用品（設定：￥{{ data.daily_st }}）</div>
+            <div class="card-body daily">
+                ￥{{ data.daily_ex }}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">
+        <div class="card" style="width:18rem;">
+            <div class="card-header fixed-ex">奨学金</div>
+            <div class="card-body">
+                ￥{{ data.scholar }}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-3">
+        <div class="card" style="width:18rem;">
+            <div class="card-header hobby">趣味（設定：￥{{ data.hobby_st }}）</div>
+            <div class="card-body hobby">
+                ￥{{ data.hobby_ex }}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">
+        <div class="card" style="width:18rem;">
+            <div class="card-header fixed-ex">光熱費</div>
+            <div class="card-body">
+                ￥{{ data.utility_cost }}
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-3">
+        <div class="card" style="width:18rem;">
+            <div class="card-header last">残高</div>
+            <div class="card-body last">
+                ￥{{ data.last_ex }}
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-1"></div>
+    <div class="col-sm-2">
+        <div class="card" style="width:18rem;">
+            <div class="card-header fixed-ex">通信費・その他</div>
+            <div class="card-body">
+                ￥{{ data.other }}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
