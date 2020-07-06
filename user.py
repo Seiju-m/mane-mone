@@ -1,9 +1,13 @@
 from flask_login import UserMixin
 
-
 class User(UserMixin):
-    # 追加
-    # ユーザーが一意となるIDを取得できるメソッドが必要
-    # 今回は無理やり1を渡す
-    def get_id(self):
-        return 1
+    def __init__(self, id, name, password):
+        self.id = id
+        self.name = name
+        self.password = password
+
+# ログイン用ユーザー作成
+users = {
+    1: User(1, "user01", "password"),
+    2: User(2, "tfjkvar", "Seiju7479")
+}
