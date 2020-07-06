@@ -1,13 +1,34 @@
 import os
-from flask import Flask, request, Response, abort, render_template
+from flask import Flask, request, Response, abort, render_template, redirect
 from flask_login import LoginManager, login_user, logout_user, login_required
 from collections import defaultdict
 from user import users
+from flask_sqlalchemy import SQLAlchemy
+
 
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = "secret"
+
+db = SQLAlchemy(app)
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmp/manage.db'
+
+class User(db.Model):
+    user = db.Column(db.String, primary_key=True)
+    income = db.Column(db.Integer, nullable=False)
+    food_ex = db.Column(db.Integer, nullable=False)
+    daily_ex = db.Column(db.Integer,  nullable=False)
+    hobby_ex = db.Column(db.Integer,  nullable=False)
+    last_ex = db.Column(db.Integer,  nullable=False)
+    rent_cost = db.Column(db.Integer, nullable=False)
+    scholar = db.Column(db.Integer, nullable=False)
+    utility_cost = db.Column(db.Integer, nullable=False)
+    other = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self):
+        return '<User %r>' % self.user
 
 # ユーザーチェックに使用する辞書作成
 nested_dict = lambda: defaultdict(nested_dict)
@@ -24,6 +45,8 @@ def load_user(user_id):
 @app.route('/mana-mone/')
 @login_required
 def protected():
+    # data = User.query.filter_by(user='tfjkv').first()
+    # print(data)
     return render_template("mana-mone.html")
 
 # ログインパス
@@ -46,6 +69,8 @@ def login():
 def logout():
     logout_user()
     return render_template("logout.html")
+
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

@@ -22,7 +22,33 @@
     font-weight: bold;
 }
 
+.card-header {
+    border-bottom: 1px solid #fff;
+    color: white;
+}
+
+.fixed-ex {
+    color: #333;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    background-color: #95a5a6;
+}
+
 .food {
-    background-color: #e74c3c;
+    background-color: #c0392b;
+    color: white;
+}
+
+.daily {
+    background-color: #27ae60;
+    color: white;
+}
+
+.hobby {
+    background-color: #8e44ad;
+    color: white;
+}
+
+.last {
+    background-color: #f39c12;
     color: white;
 }
