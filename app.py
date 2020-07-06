@@ -45,7 +45,8 @@ def load_user(user_id):
 @app.route('/mana-mone/')
 @login_required
 def protected():
-    data = User.query.filter_by(user='tfjkv').first()
+    #data = User.query.filter_by(user='tfjkv').first()
+    data = 500
     return render_template("mana-mone.html", data=data)
 
 # ログインパス
