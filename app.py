@@ -45,9 +45,7 @@ def load_user(user_id):
 @app.route('/mana-mone/')
 @login_required
 def protected():
-    #data = User.query.filter_by(user='tfjkv').first()
-    title = 'aaa'
-    return render_template("mana-mone.html", title=title)
+    return render_template("mana-mone.html")
 
 # ログインパス
 @app.route('/', methods=["GET", "POST"])
@@ -57,7 +55,6 @@ def login():
         if(request.form["username"] in user_check and request.form["password"] == user_check[request.form["username"]]["password"]):
             # ユーザーが存在した場合はログイン
             login_user(users.get(user_check[request.form["username"]]["id"]))
-            title = 0
             data = User.query.filter_by(user='tfjkv').first()
             return render_template("mana-mone.html",  title=data)
         else:
