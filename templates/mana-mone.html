@@ -5,6 +5,9 @@
         <a href="#" class="navbar-brand">Manage Money</a>
         <a href="/logout" align="right">logout</a>
     </nav>
+    <div id="test">
+            [[ hello ]]
+        </div>
     <br>
     <div class="row">
         <div class="col-sm-2"></div>
@@ -22,7 +25,7 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-2">
             <div class="card" style="width:18rem;">
-                <div class="card-header food">食費（設定：￥{{ data.food_st }}）<i class="far fa-edit"></i></div>
+                <div class="card-header food">食費（設定：￥{{ data.food_st }}）<i class="far fa-edit fa-pull-right"></i></div>
                 <div class="card-body food">
                     ￥{{ data.food_ex }}
                 </div>
