@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>mana-mone</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
 </head>
 
 <body>
@@ -15,11 +15,104 @@
         <a href="#" class="navbar-brand">Manage Money</a>
         <a href="/logout" align="right">logout</a>
     </nav>
-    <div>クラスのみんなには内緒だよ</div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">収入</div>
+        <div class="col-sm-4 col-md-2">￥200,000</div>
+    </div>
+    <br>
+    <div class="row title">
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">使用可能</div>
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">固定費</div>
+    </div>
+    <div class="row">
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">食費（設定：）</div>
+                <div class="card-body food">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">家賃</div>
+                <div class="card-body">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">日用品（設定：）</div>
+                <div class="card-body">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">奨学金</div>
+                <div class="card-body">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">趣味（設定：）</div>
+                <div class="card-body">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">光熱費</div>
+                <div class="card-body">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">残高</div>
+                <div class="card-body">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 col-md-1"></div>
+        <div class="col-sm-4 col-md-2">
+            <div class="card" style="width:18rem;">
+                <div class="card-header">通信費・その他</div>
+                <div class="card-body">
+                    ￥50,000
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-</body>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
 
 </html>
