@@ -1,49 +1,29 @@
 import os
-from flask import Flask, request, Response, abort, render_template, redirect
+from flask import Flask, request, Response, abort, render_template, redirect, jsonify
 from flask_login import LoginManager, login_user, logout_user, login_required
 from collections import defaultdict
-from user import users
+# from user import users
 from flask_sqlalchemy import SQLAlchemy
-from calc import calc
-
+from lib import calc, user, db_ope
+# import lib
+# from lib import db_ope
 
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = "secret"
 
-db = SQLAlchemy(app)
-
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///tmp/manage.db'
-
-class User(db.Model):
-    user = db.Column(db.String, primary_key=True)
-    income = db.Column(db.Integer, nullable=False)
-    food_ex = db.Column(db.Integer, nullable=False)
-    food_st = db.Column(db.Integer, nullable=False)
-    daily_ex = db.Column(db.Integer,  nullable=False)
-    daily_st = db.Column(db.Integer, nullable=False)
-    hobby_ex = db.Column(db.Integer,  nullable=False)
-    hobby_st = db.Column(db.Integer,  nullable=False)
-    last_ex = db.Column(db.Integer,  nullable=False)
-    rent_cost = db.Column(db.Integer, nullable=False)
-    scholar = db.Column(db.Integer, nullable=False)
-    utility_cost = db.Column(db.Integer, nullable=False)
-    other = db.Column(db.Integer, nullable=False)
-
-    def __repr__(self):
-        return '<User %r>' % self.user
 
 # ユーザーチェックに使用する辞書作成
 nested_dict = lambda: defaultdict(nested_dict)
 user_check = nested_dict()
-for i in users.values():
+for i in user.users.values():
     user_check[i.name]["password"] = i.password
     user_check[i.name]["id"] = i.id
 
 @login_manager.user_loader
 def load_user(user_id):
-    return users.get(int(user_id))
+    return user.users.get(int(user_id))
 
 # ログインしないと表示されないパス
 @app.route('/mana-mone/')
@@ -58,9 +38,10 @@ def login():
         # ユーザーチェック
         if(request.form["username"] in user_check and request.form["password"] == user_check[request.form["username"]]["password"]):
             # ユーザーが存在した場合はログイン
-            login_user(users.get(user_check[request.form["username"]]["id"]))
-            data = User.query.filter_by(user='tfjkv').first()
-            n_data = calc(data)
+            login_user(user.users.get(user_check[request.form["username"]]["id"]))
+            data = db_ope.get_account()
+            # data = User.query.filter_by(user='tfjkv').first()
+            n_data = calc.calc(data)
             return render_template("mana-mone.html",  data=n_data)
         else:
             return abort(401)
@@ -73,6 +54,17 @@ def login():
 def logout():
     logout_user()
     return render_template("logout.html")
+
+@app.route('/food', methods=["POST"])
+def food():
+    req = request.json
+    print("req" + str(req))
+    print(request.json.get('food_st_e'))
+    db_ope.upd_food(request.json.get('food_st_e'), request.json.get('food_ex_e'))
+    res = jsonify({
+        'status_code':200
+    })
+    return res
 
 
 if __name__ == '__main__':

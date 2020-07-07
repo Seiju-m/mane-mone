@@ -27,7 +27,7 @@
             <div class="card" style="width:18rem;">
                 <div class="card-header food">
                     食費（設定：￥{{ data.food_st }}）
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="showModal = 1"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="test(`{{ data.food_st }}`,`{{ data.food_ex }}`)"></i>
                 </div>
                 <div class="card-body food">
                     ￥{{ data.food_ex }}
@@ -112,15 +112,25 @@
     </div>
 
     <modal v-if="showModal == '1'" @close="showModal = false" :key="1">
-        <h3 slot="header">ウィンドウ1</h3>
+        <h3 slot="header">食費</h3>
         <div slot="body">
-            <p>モーダルウィンドウが開きました。</p>
+                <form v-on:submit.prevent="submit()">     
+                        <div class="form-group">
+                                設定額：<input v-bind:value="food_st_e" type="text" class="" placeholder="" required="required" name="food_st_e">
+                        </div>
+                        <div class="form-group">
+                                使用額：<input v-bind:value="food_ex_e" type="text" class="" placeholder="" required="required" name="food_ex_e">
+                        </div>
+                        <div class="">
+                            <button type="submit" class="btn btn-primary">完了</button>
+                        </div>
+                    </form>
         </div>
-        <div class="link_area" slot="footer">
+        <!-- <div class="link_area" slot="footer">
             <p class="modal-default-button" @click="showModal = 2">
-                ウィンドウ2へ
+                完了
             </p>
-        </div>
+        </div> -->
     </modal>
 
     <modal v-if="showModal == '2'" @close="showModal = false" :key="2">
