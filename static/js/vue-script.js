@@ -1,3 +1,15 @@
+Vue.component('modal', {
+   template: '#modal-template'
+})
+
+new Vue({
+   el: '#modal',
+   data: {
+       showModal: false,
+   }
+})
+
+
 var app = new Vue({
     delimiters: ['[[', ']]'],
     el:'#app',
@@ -24,3 +36,5 @@ var app = new Vue({
      }
     }
  })
+
+
