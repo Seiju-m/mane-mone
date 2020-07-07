@@ -57,8 +57,11 @@
     margin: 3vw;
 }
  
+i.fa-edit, i.far {
+    cursor: pointer;
+}
 
- 
+
 .modal-mask {
   position: fixed;
   z-index: 9998;
