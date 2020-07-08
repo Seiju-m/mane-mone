@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, Response, abort, render_template, redirect, jsonify
+from flask import Flask, request, Response, abort, render_template, redirect, jsonify, url_for
 from flask_login import LoginManager, login_user, logout_user, login_required
 from collections import defaultdict
 # from user import users
@@ -39,14 +39,21 @@ def login():
         if(request.form["username"] in user_check and request.form["password"] == user_check[request.form["username"]]["password"]):
             # ユーザーが存在した場合はログイン
             login_user(user.users.get(user_check[request.form["username"]]["id"]))
-            data = db_ope.get_account()
-            # data = User.query.filter_by(user='tfjkv').first()
-            n_data = calc.calc(data)
-            return render_template("mana-mone.html",  data=n_data)
+            return redirect(url_for('main'))
+            # data = db_ope.get_account()
+            # n_data = calc.calc(data)
+            # return render_template("mana-mone.html",  data=n_data)
         else:
             return abort(401)
     else:
         return render_template("login.html")
+
+@app.route('/main/')
+@login_required
+def main():
+    data = db_ope.get_account()
+    n_data = calc.calc(data)
+    return render_template("mana-mone.html",  data=n_data)
 
 # ログアウトパス
 @app.route('/logout/')
