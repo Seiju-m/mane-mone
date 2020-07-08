@@ -55,12 +55,28 @@ def logout():
     logout_user()
     return render_template("logout.html")
 
-@app.route('/food', methods=["POST"])
-def food():
+@app.route('/update', methods=["POST"])
+def upd():
     req = request.json
-    print("req" + str(req))
-    print(request.json.get('food_st_e'))
-    db_ope.upd_food(request.json.get('food_st_e'), request.json.get('food_ex_e'))
+    if request.json.get('cat') == 'food':
+        db_ope.upd_food(request.json.get('st_val'), request.json.get('ex_val'))
+    elif request.json.get('cat') == 'daily':
+        db_ope.upd_daily(request.json.get('st_val'), request.json.get('ex_val'))
+    elif request.json.get('cat') == 'hobby':
+        db_ope.upd_hobby(request.json.get('st_val'), request.json.get('ex_val'))
+    elif request.json.get('cat') == 'rent':
+        db_ope.upd_rent(request.json.get('st_val'))
+    elif request.json.get('cat') == 'scholar':
+        db_ope.upd_scholar(request.json.get('st_val'))
+    elif request.json.get('cat') == 'util':
+        db_ope.upd_util(request.json.get('st_val'))
+    elif request.json.get('cat') == 'other':
+        db_ope.upd_other(request.json.get('st_val'))
+    elif request.json.get('cat') == 'income':
+        db_ope.upd_income(request.json.get('st_val'))
+
+    else:
+        print('catagory is not set')
     res = jsonify({
         'status_code':200
     })
