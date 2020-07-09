@@ -232,21 +232,21 @@ div.card-body {
 
     .rent-par {
         position: absolute;
-        top: 770px;
+        top: 765px;
     }
 
     .scholar-par {
         position: absolute;
-        top: 920px;
+        top: 915px;
     }
 
     .util-par {
         position: absolute;
-        top: 1070px;
+        top: 1065px;
     }
 
     .other-par {
         position: absolute;
-        top: 1220px;
+        top: 1215px;
     }
 }
