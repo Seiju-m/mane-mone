@@ -178,6 +178,22 @@ div.income {
     width:50%;
 }
 
+.card {
+    width:20rem; 
+    height: 8rem;
+    position: relative;
+}
+
+div.card-body {
+    font-size: 1.5em;
+}
+
+.price {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+}
+
 @media screen and (max-width: 480px) {
 
     .modal-container {

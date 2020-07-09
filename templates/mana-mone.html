@@ -27,25 +27,25 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-3">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header food">
                     食費（設定：￥{{ data.food_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="f_edit(`{{ data.food_st }}`,`{{ data.c_food_ex }}`)"></i>
                 </div>
-                <div class="card-body food" style="font-size: 1.4em">
-                    ￥{{ data.c_food_ex }}
+                <div class="card-body food" style="font-size: 1.5em;">
+                    <p class="price">￥{{ data.c_food_ex }}</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header fixed-ex">
                     家賃
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="r_edit(`{{ data.rent_cost }}`)"></i>
                 </div>
                 <div class="card-body">
-                    ￥{{ data.rent_cost }}
+                    <p class="price">￥{{ data.rent_cost }}</p>
                 </div>
             </div>
         </div>
@@ -54,25 +54,25 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-3">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header daily">
                     日用品（設定：￥{{ data.daily_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="d_edit(`{{ data.daily_st }}`,`{{ data.c_daily_ex }}`)"></i>
                 </div>
                 <div class="card-body daily">
-                    ￥{{ data.c_daily_ex }}
+                    <p class="price">￥{{ data.c_daily_ex }}</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header fixed-ex">
                     奨学金
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="s_edit(`{{ data.scholar }}`)"></i>
                 </div>
                 <div class="card-body">
-                    ￥{{ data.scholar }}
+                    <p class="price">￥{{ data.scholar }}</p>
                 </div>
             </div>
         </div>
@@ -81,25 +81,25 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-3">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header hobby">
                     趣味（設定：￥{{ data.hobby_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="h_edit(`{{ data.hobby_st }}`,`{{ data.c_hobby_ex }}`)"></i>
                 </div>
                 <div class="card-body hobby">
-                    ￥{{ data.c_hobby_ex }}
+                    <p class="price">￥{{ data.c_hobby_ex }}</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header fixed-ex">
                     光熱費
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="u_edit(`{{ data.utility_cost }}`)"></i>
                 </div>
                 <div class="card-body">
-                    ￥{{ data.utility_cost }}
+                    <p class="price">￥{{ data.utility_cost }}</p>
                 </div>
             </div>
         </div>
@@ -108,22 +108,22 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-3">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header last">残高</div>
                 <div class="card-body last">
-                    ￥{{ data.last_ex }}
+                    <p class="price">￥{{ data.last_ex }}</p>
                 </div>
             </div>
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-2">
-            <div class="card" style="width:20rem; height: 10rem;">
+            <div class="card">
                 <div class="card-header fixed-ex">
                     通信費・その他
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="o_edit(`{{ data.other }}`)"></i>
                 </div>
                 <div class="card-body">
-                    ￥{{ data.other }}
+                    <p class="price">￥{{ data.other }}</p>
                 </div>
             </div>
         </div>
