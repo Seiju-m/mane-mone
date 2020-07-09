@@ -136,10 +136,10 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('food')" id="food_e">
                 <div class="form-group edit-form">
-                    設定額：<input v-bind:value="st_val" type="text" required="required" name="food_st_e" id="food_st_e" class="edit-input">
+                    設定額：<input v-bind:value="st_val" type="number" required="required" name="food_st_e" id="food_st_e" class="edit-input">
                 </div>
                 <div class="form-group edit-form">
-                    使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e" id="food_ex_e" class="edit-input">
+                    使用額：<input v-bind:value="`{{ data.food_ex }}`" type="number" required="required" name="food_ex_e" id="food_ex_e" class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -153,10 +153,10 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('daily')" id="daily_e">
                 <div class="form-group edit-form">
-                    設定額：<input v-bind:value="st_val" type="text" required="required" name="daily_st_e" id="daily_st_e" class="edit-input">
+                    設定額：<input v-bind:value="st_val" type="number" required="required" name="daily_st_e" id="daily_st_e" class="edit-input">
                 </div>
                 <div class="form-group edit-form">
-                    使用額：<input v-bind:value="`{{ data.daily_ex }}`" type="text" required="required" name="daily_ex_e"
+                    使用額：<input v-bind:value="`{{ data.daily_ex }}`" type="number" required="required" name="daily_ex_e"
                         id="daily_ex_e" class="edit-input">
                 </div>
                 <div>
@@ -171,10 +171,10 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('hobby')" id="hobby_e">
                 <div class="form-group edit-form">
-                    設定額：<input v-bind:value="st_val" type="text" required="required" name="hobby_st_e" id="hobby_st_e" class="edit-input">
+                    設定額：<input v-bind:value="st_val" type="number" required="required" name="hobby_st_e" id="hobby_st_e" class="edit-input">
                 </div>
                 <div class="form-group edit-form">
-                    使用額：<input v-bind:value="`{{ data.hobby_ex }}`" type="text" required="required" name="hobby_ex_e"
+                    使用額：<input v-bind:value="`{{ data.hobby_ex }}`" type="number" required="required" name="hobby_ex_e"
                         id="hobby_ex_e" class="edit-input">
                 </div>
                 <div>
@@ -189,7 +189,7 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('rent')" id="rent_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="rent_e" id="rent_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="number" required="required" name="rent_e" id="rent_e" class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -203,7 +203,7 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('scholar')" id="scholar_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="scholar_e" id="scholar_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="number" required="required" name="scholar_e" id="scholar_e" class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -217,7 +217,7 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('util')" id="util_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="util_e" id="util_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="number" required="required" name="util_e" id="util_e" class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -231,7 +231,7 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('other')" id="other_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="other_e" id="other_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="number" required="required" name="other_e" id="other_e" class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -245,7 +245,7 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('income')" id="income_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="income_e" id="income_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="number" required="required" name="income_e" id="income_e" class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
