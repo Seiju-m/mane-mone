@@ -212,41 +212,41 @@ div.card-body {
 
     .food-par {
         position: absolute;
-        top: 150px;
+        top: 180px;
     }
 
     .daily-par {
         position: absolute;
-        top: 300px;
+        top: 330px;
     }
 
     .hobby-par {
         position: absolute;
-        top: 450px;
+        top: 480px;
     }
 
     .last-par {
         position: absolute;
-        top: 600px;
+        top: 630px;
     }
 
     .rent-par {
         position: absolute;
-        top: 750px;
+        top: 780px;
     }
 
     .scholar-par {
         position: absolute;
-        top: 900px;
+        top: 930px;
     }
 
     .util-par {
         position: absolute;
-        top: 1050px;
+        top: 1080px;
     }
 
     .other-par {
         position: absolute;
-        top: 1200px;
+        top: 1230px;
     }
 }
