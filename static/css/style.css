@@ -194,10 +194,6 @@ div.card-body {
     bottom: 0;
 }
 
-.top-income {
-    width: 21rem;
-}
-
 @media screen and (max-width: 480px) {
 
     .modal-container {
@@ -210,4 +206,7 @@ div.card-body {
         padding: 6px;
       }
     
+      .top-income {
+        width: 21rem;
+    }
 }
