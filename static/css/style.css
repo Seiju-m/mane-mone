@@ -181,7 +181,7 @@ div.income {
 @media screen and (max-width: 480px) {
 
     .modal-container {
-        width: 300px;
-        min-height: 280px;
+        width: 320px;
+        min-height: 270px;
     }
 }
