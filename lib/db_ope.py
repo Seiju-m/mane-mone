@@ -42,6 +42,7 @@ def upd_food(food_st, food_ex):
     data.food_st = food_st
     data.food_ex = food_ex
     db_session.commit()
+    return 'res'
 
 def upd_daily(daily_st, daily_ex):
     import db.models as db

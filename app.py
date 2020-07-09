@@ -63,7 +63,7 @@ def logout():
 def upd():
     req = request.json
     if request.json.get('cat') == 'food':
-        db_ope.upd_food(request.json.get('st_val'), request.json.get('ex_val'))
+        db_res = db_ope.upd_food(request.json.get('st_val'), request.json.get('ex_val'))
     elif request.json.get('cat') == 'daily':
         db_ope.upd_daily(request.json.get('st_val'), request.json.get('ex_val'))
     elif request.json.get('cat') == 'hobby':
