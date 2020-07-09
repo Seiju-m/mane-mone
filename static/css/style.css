@@ -161,13 +161,13 @@ div.income {
     margin-left: 12px;
 }
 
-i.faa-float {
-    font-size: 1.3em;
+i.faa-float-i:before {
+    font-size: 0.9em;
 }
 
 .fa-edit:before {
     margin-top: 3px;
-    font-size: 1.1em;
+    font-size: 1.05em;
 }
 
 .edit-form {
