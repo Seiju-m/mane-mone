@@ -1,7 +1,7 @@
 @charset 'utf-8';
 
 * {
-    font-family: '遊ゴシック'
+    font-family: '遊ゴシック','メイリオ', 'Meiryo', sans-serif'
 }
 
 body {
