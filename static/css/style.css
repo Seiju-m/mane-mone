@@ -204,9 +204,9 @@ div.card-body {
     .modal-body {
         margin: 30px 0;
         padding: 6px;
-      }
+    }
     
-      div.income {
+    div.income {
         width: 22rem;
     }
 
@@ -217,36 +217,36 @@ div.card-body {
 
     .daily-par {
         position: absolute;
-        top: 325px;
+        top: 322px;
     }
 
     .hobby-par {
         position: absolute;
-        top: 470px;
+        top: 465px;
     }
 
     .last-par {
         position: absolute;
-        top: 620px;
+        top: 615px;
     }
 
     .rent-par {
         position: absolute;
-        top: 765px;
+        top: 760px;
     }
 
     .scholar-par {
         position: absolute;
-        top: 915px;
+        top: 910px;
     }
 
     .util-par {
         position: absolute;
-        top: 1065px;
+        top: 1060px;
     }
 
     .other-par {
         position: absolute;
-        top: 1215px;
+        top: 1210px;
     }
 }
