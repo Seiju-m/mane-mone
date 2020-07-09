@@ -206,7 +206,7 @@ div.card-body {
         padding: 6px;
       }
     
-      .top-income {
+      div.income {
         width: 21rem;
     }
 }
