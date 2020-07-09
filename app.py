@@ -40,9 +40,6 @@ def login():
             # ユーザーが存在した場合はログイン
             login_user(user.users.get(user_check[request.form["username"]]["id"]))
             return redirect(url_for('main'))
-            # data = db_ope.get_account()
-            # n_data = calc.calc(data)
-            # return render_template("mana-mone.html",  data=n_data)
         else:
             return abort(401)
     else:
@@ -81,7 +78,6 @@ def upd():
         db_ope.upd_other(request.json.get('st_val'))
     elif request.json.get('cat') == 'income':
         db_ope.upd_income(request.json.get('st_val'))
-
     else:
         print('catagory is not set')
     res = jsonify({

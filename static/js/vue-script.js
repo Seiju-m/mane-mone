@@ -86,9 +86,11 @@ var md = new Vue({
          axios.post('/update', this.formData)
             .then(response => {
                console.log("response" + response)
+               setTimeout(() => {
                $.LoadingOverlay("hide");
                this.showModal = false
                document.location.reload()
+               }, 3000)
             })
             .catch(error => {
                console.log("error" + error)
