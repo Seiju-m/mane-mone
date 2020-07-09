@@ -2,8 +2,11 @@
 {% block content %}
 
 <nav class="navbar navbar-dark bg-dark">
-    <a href="#" class="navbar-brand">Manage Money</a>
-    <a href="/logout" align="right">logout</a>
+    <a href="#" class="navbar-brand">
+        <i class="fas fa-wallet"></i>
+        Manage Money
+    </a>
+    <a href="/logout" align="right" class="logout">logout <i class="fas fa-sign-out-alt"></i></a>
 </nav>
 
 <div id="modal">
@@ -12,9 +15,12 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-1">収入</div>
-        <div class="col-sm-4">
+    </div>
+    <div class="row">
+        <div class="col-sm-2"></div>
+        <div class="col-sm-2 alert alert-warning income" role="alert">
             ￥{{ data.income }}
-            <i class="far fa-edit faa-float animated-hover" @click="i_edit(`{{ data.income }}`)"></i>
+            <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="i_edit(`{{ data.income }}`)"></i>
         </div>
     </div>
     <br>
@@ -126,123 +132,123 @@
     <!---------------------------- modal ---------------------------->
 
     <modal v-if="showModal == '1'" @close="showModal = false" :key="1">
-        <h3 slot="header">食費</h3>
+        <h4 slot="header">食費</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('food')" id="food_e">
-                <div class="form-group">
-                    設定額：<input v-bind:value="st_val" type="text" required="required" name="food_st_e" id="food_st_e">
+                <div class="form-group edit-form">
+                    設定額：<input v-bind:value="st_val" type="text" required="required" name="food_st_e" id="food_st_e" class="edit-input">
                 </div>
-                <div class="form-group">
-                    使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e" id="food_ex_e">
+                <div class="form-group edit-form">
+                    使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e" id="food_ex_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
     </modal>
 
     <modal v-if="showModal == '2'" @close="showModal = false" :key="2">
-        <h3 slot="header">日用品</h3>
+        <h4 slot="header">日用品</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('daily')" id="daily_e">
-                <div class="form-group">
-                    設定額：<input v-bind:value="st_val" type="text" required="required" name="daily_st_e" id="daily_st_e">
+                <div class="form-group edit-form">
+                    設定額：<input v-bind:value="st_val" type="text" required="required" name="daily_st_e" id="daily_st_e" class="edit-input">
                 </div>
-                <div class="form-group">
+                <div class="form-group edit-form">
                     使用額：<input v-bind:value="`{{ data.daily_ex }}`" type="text" required="required" name="daily_ex_e"
-                        id="daily_ex_e">
+                        id="daily_ex_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
     </modal>
 
     <modal v-if="showModal == '3'" @close="showModal = false" :key="3">
-        <h3 slot="header">趣味</h3>
+        <h4 slot="header">趣味</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('hobby')" id="hobby_e">
-                <div class="form-group">
-                    設定額：<input v-bind:value="st_val" type="text" required="required" name="hobby_st_e" id="hobby_st_e">
+                <div class="form-group edit-form">
+                    設定額：<input v-bind:value="st_val" type="text" required="required" name="hobby_st_e" id="hobby_st_e" class="edit-input">
                 </div>
-                <div class="form-group">
+                <div class="form-group edit-form">
                     使用額：<input v-bind:value="`{{ data.hobby_ex }}`" type="text" required="required" name="hobby_ex_e"
-                        id="hobby_ex_e">
+                        id="hobby_ex_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
     </modal>
 
     <modal v-if="showModal == '4'" @close="showModal = false" :key="4">
-        <h3 slot="header">家賃</h3>
+        <h4 slot="header">家賃</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('rent')" id="rent_f_e">
-                <div class="form-group">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="rent_e" id="rent_e">
+                <div class="form-group edit-form">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="rent_e" id="rent_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
     </modal>
 
     <modal v-if="showModal == '5'" @close="showModal = false" :key="5">
-        <h3 slot="header">奨学金</h3>
+        <h4 slot="header">奨学金</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('scholar')" id="scholar_f_e">
-                <div class="form-group">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="scholar_e" id="scholar_e">
+                <div class="form-group edit-form">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="scholar_e" id="scholar_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
     </modal>
 
     <modal v-if="showModal == '6'" @close="showModal = false" :key="6">
-        <h3 slot="header">光熱費</h3>
+        <h4 slot="header">光熱費</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('util')" id="util_f_e">
-                <div class="form-group">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="util_e" id="util_e">
+                <div class="form-group edit-form">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="util_e" id="util_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
     </modal>
 
     <modal v-if="showModal == '7'" @close="showModal = false" :key="7">
-        <h3 slot="header">通信費・その他</h3>
+        <h4 slot="header">通信費・その他</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('other')" id="other_f_e">
-                <div class="form-group">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="other_e" id="other_e">
+                <div class="form-group edit-form">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="other_e" id="other_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
     </modal>
 
     <modal v-if="showModal == '8'" @close="showModal = false" :key="8">
-        <h3 slot="header">収入</h3>
+        <h4 slot="header">収入</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('income')" id="income_f_e">
-                <div class="form-group">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="income_e" id="income_e">
+                <div class="form-group edit-form">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="income_e" id="income_e" class="edit-input">
                 </div>
                 <div>
-                    <button type="submit" class="btn btn-primary">完了</button>
+                    <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
         </div>
@@ -259,13 +265,8 @@
                     <div class="modal-header">
                         <slot name="header"></slot>
                     </div>
- 
                     <div class="modal-body">
                         <slot name="body"></slot>
-                    </div>
- 
-                    <div class="modal-footer">
-                        <slot name="footer"></slot>
                     </div>
                 </div>
             </div>

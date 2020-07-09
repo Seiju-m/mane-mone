@@ -1,5 +1,13 @@
 @charset 'utf-8';
 
+* {
+    font-family: '遊ゴシック'
+}
+
+body {
+    background-color: #F5F5F5;
+}
+
 .login-form {
     width: 340px;
     margin: 50px auto;
@@ -81,10 +89,10 @@ i.fa-edit, i.far {
 }
  
 .modal-container {
-    width: 80%;
+    width: 50%;
+    min-height: 50%;
     max-width: 840px;
     margin: 0 auto;
-    padding: 60px 2vw 80px;
     border: 2px solid #aaa;
     text-align: center;
     background: #fff;
@@ -93,16 +101,22 @@ i.fa-edit, i.far {
     transition: all .3s ease;
 }
  
-.modal-header h3 {
+.modal-header h4 {
     margin-top: 0;
-    color: #42b983;
+    color: rgb(52,58,64);
     font-size: 30px;
     text-align: center;
     font-weight: bold;
 }
+
+.modal-header {
+    padding: 0;
+    padding-top: 30px;
+    padding-left: 30px;
+}
  
 .modal-body {
-  margin: 20px 0;
+  margin: 30px 0;
 }
  
 .link_area {
@@ -136,4 +150,30 @@ i.fa-edit, i.far {
 .modal-enter .modal-container,
 .modal-leave-active .modal-container {
   transform: translateY(30px);
+}
+
+a.logout {
+    color: #fff;
+}
+
+div.income {
+    font-size: 1.4em;
+    margin-left: 12px;
+}
+
+.fa-edit:before {
+    margin-top: 3px;
+}
+
+.edit-form {
+    font-size: 1.3em;
+}
+
+.edit-btn {
+    margin-top: 40px;
+    padding: 10px 15px;
+}
+
+.edit-input {
+    width:50%;
 }

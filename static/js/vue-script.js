@@ -98,8 +98,6 @@ var md = new Vue({
    }
 })
 
-global.vm = md;
-
 
 var app = new Vue({
    delimiters: ['[[', ']]'],
