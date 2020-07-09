@@ -179,7 +179,7 @@ div.income {
 }
 
 .card {
-    width:21rem; 
+    width:22rem; 
     height: 8rem;
     position: relative;
 }
@@ -207,6 +207,6 @@ div.card-body {
       }
     
       div.income {
-        width: 21rem;
+        width: 22rem;
     }
 }
