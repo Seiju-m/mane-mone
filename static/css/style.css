@@ -222,31 +222,31 @@ div.card-body {
 
     .hobby-par {
         position: absolute;
-        top: 475px;
+        top: 470px;
     }
 
     .last-par {
         position: absolute;
-        top: 625px;
+        top: 620px;
     }
 
     .rent-par {
         position: absolute;
-        top: 775px;
+        top: 770px;
     }
 
     .scholar-par {
         position: absolute;
-        top: 925px;
+        top: 920px;
     }
 
     .util-par {
         position: absolute;
-        top: 1075px;
+        top: 1070px;
     }
 
     .other-par {
         position: absolute;
-        top: 1225px;
+        top: 1220px;
     }
 }
