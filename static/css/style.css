@@ -10,7 +10,7 @@ body {
 }
 
 .cat-icon {
-    margin-right: 8px;
+    margin-right: 3px;
 }
 
 .login-form {
@@ -33,6 +33,10 @@ body {
 .btn {        
     font-size: 15px;
     font-weight: bold;
+}
+
+.card {
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .card-header {
@@ -72,6 +76,10 @@ body {
  
 i.fa-edit, i.far {
     cursor: pointer;
+}
+
+.card-header {
+    padding: 0.75rem 1.0rem;
 }
 
 
@@ -164,6 +172,7 @@ a.logout {
 div.income {
     font-size: 1.4em;
     margin-left: 17px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 i.faa-float-i:before {
