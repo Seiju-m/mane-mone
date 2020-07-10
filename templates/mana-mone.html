@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-3 alert alert-warning income" role="alert">
-            ￥{{ data.income }}
+            ￥{{ data.income_d }}
             <i class="far fa-edit fa-pull-right faa-float faa-float-i animated-hover" @click="i_edit(`{{ data.income }}`)"></i>
         </div>
     </div>
@@ -37,9 +37,9 @@
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="f_edit(`{{ data.food_st }}`,`{{ data.c_food_ex }}`)"></i>
                 </div>
                 <div class="card-body food">
-                    <p class="pay">使用 ￥{{ data.food_ex }}</p>
+                    <p class="pay">使用 ￥{{ data.food_ex_d }}</p>
                     <p class="price">
-                        <span v-if="checked">￥{{ data.c_food_ex }}</span>
+                        <span v-if="checked">￥{{ data.c_food_ex_d }}</span>
                         <span v-else>￥[[ food_data ]]</span>
                         /<span class="per">[[ per ]]</span>
                     </p>
@@ -54,7 +54,7 @@
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="r_edit(`{{ data.rent_cost }}`)"></i>
                 </div>
                 <div class="card-body">
-                    <p class="price">￥{{ data.rent_cost }}</p>
+                    <p class="price">￥{{ data.rent_cost_d }}</p>
                 </div>
             </div>
         </div>
@@ -69,9 +69,9 @@
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="d_edit(`{{ data.daily_st }}`,`{{ data.c_daily_ex }}`)"></i>
                 </div>
                 <div class="card-body daily">
-                    <p class="pay">使用 ￥{{ data.daily_ex }}</p>
+                    <p class="pay">使用 ￥{{ data.daily_ex_d }}</p>
                     <p class="price">
-                        <span v-if="checked">￥{{ data.c_daily_ex }}</span>
+                        <span v-if="checked">￥{{ data.c_daily_ex_d }}</span>
                         <span v-else>￥[[ daily_data ]]</span>
                         /<span class="per">[[ per ]]</span>
                     </p>
@@ -86,7 +86,7 @@
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="s_edit(`{{ data.scholar }}`)"></i>
                 </div>
                 <div class="card-body">
-                    <p class="price">￥{{ data.scholar }}</p>
+                    <p class="price">￥{{ data.scholar_d }}</p>
                 </div>
             </div>
         </div>
@@ -101,9 +101,9 @@
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="h_edit(`{{ data.hobby_st }}`,`{{ data.c_hobby_ex }}`)"></i>
                 </div>
                 <div class="card-body hobby">
-                    <p class="pay">使用 ￥{{ data.hobby_ex }}</p>
+                    <p class="pay">使用 ￥{{ data.hobby_ex_d }}</p>
                     <p class="price">
-                        <span v-if="checked">￥{{ data.c_hobby_ex }}</span>
+                        <span v-if="checked">￥{{ data.c_hobby_ex_d }}</span>
                         <span v-else>￥[[ hobby_data ]]</span>
                         /<span class="per">[[ per ]]</span>
                     </p>
@@ -118,7 +118,7 @@
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="u_edit(`{{ data.utility_cost }}`)"></i>
                 </div>
                 <div class="card-body">
-                    <p class="price">￥{{ data.utility_cost }}</p>
+                    <p class="price">￥{{ data.utility_cost_d }}</p>
                 </div>
             </div>
         </div>
@@ -132,8 +132,8 @@
                     <i class="fas fa-piggy-bank  fa-fw cat-icon"></i>残高
                 </div>
                 <div class="card-body last">
-                    <p class="pay">使用 ￥{{ data.last_ex }}</p>
-                    <p class="price">￥{{ data.c_last_ex }}</p>
+                    <p class="pay">使用 ￥{{ data.last_ex_d }}</p>
+                    <p class="price">￥{{ data.c_last_ex_d }}</p>
                 </div>
             </div>
         </div>
@@ -145,7 +145,7 @@
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="o_edit(`{{ data.other }}`)"></i>
                 </div>
                 <div class="card-body">
-                    <p class="price">￥{{ data.other }}</p>
+                    <p class="price">￥{{ data.other_d }}</p>
                 </div>
             </div>
         </div>

@@ -5,9 +5,9 @@ Vue.component('modal', {
 function toggle_clicked(checked, food_data, daily_data, hobby_data) {
    if (md.checked == true) {
       md.per = '週'
-      md.food_data = parseInt(food_data.split(",").join("") / 4)
-      md.daily_data = parseInt(daily_data.split(",").join("") / 4)
-      md.hobby_data = parseInt(hobby_data.split(",").join("") / 4)
+      md.food_data = parseInt(food_data.split(",").join("") / 4).toLocaleString()
+      md.daily_data = parseInt(daily_data.split(",").join("") / 4).toLocaleString()
+      md.hobby_data = parseInt(hobby_data.split(",").join("") / 4).toLocaleString()
       md.checked = false
    } else {
       md.per = '月'

@@ -159,6 +159,9 @@ i.fa-edit, i.far {
     font-size: 14px;
 }
 
+.login-form form {
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
  
 .modal-enter {
   opacity: 0;
