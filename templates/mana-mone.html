@@ -10,9 +10,9 @@
 </nav>
 
 <div id="modal">
-    <div class="w-m-toggle" @click="toggle_clicked(checked, `{{ data.c_food_ex }}`, `{{ data.c_daily_ex }}`, `{{ data.c_hobby_ex }}`)">
-        <input type="checkbox" v-model="checked" checked data-toggle="toggle" data-style="ios" data-on="月" data-off="週">
-    </div>
+    <div class="w-m-toggle">
+    <input type="checkbox" v-model="checked" data-toggle="toggle" data-style="ios" data-on="月" data-off="週" onchange="toggle_clicked(checked, `{{ data.c_food_ex }}`, `{{ data.c_daily_ex }}`, `{{ data.c_hobby_ex }}`)"> 
+</div>
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-1">収入</div>

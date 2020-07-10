@@ -2,12 +2,26 @@ Vue.component('modal', {
    template: '#modal-template'
 })
 
+function toggle_clicked(checked, food_data, daily_data, hobby_data) {
+   if (md.checked == true) {
+      md.per = '週'
+      md.food_data = parseInt(food_data.split(",").join("") / 4)
+      md.daily_data = parseInt(daily_data.split(",").join("") / 4)
+      md.hobby_data = parseInt(hobby_data.split(",").join("") / 4)
+      md.checked = false
+   } else {
+      md.per = '月'
+      md.checked = true
+   }
+}
+
 var md = new Vue({
    delimiters: ['[[', ']]'],
    el: '#modal',
    data: {
       st_val: 0,
       ex_val: 0,
+      checkedd: true,
       checked: true,
       per: '月',
       food_data: 0,
@@ -18,21 +32,9 @@ var md = new Vue({
          st_val: 0,
          ex_val: 0,
          cat: ''
-      }
+      },
    },
    methods: {
-      toggle_clicked:function(checked, food_data, daily_data, hobby_data){
-         if(checked == true){
-            this.checked = false
-            this.per = '週'
-            this.food_data = parseInt(food_data.split(",").join("")/4)
-            this.daily_data = parseInt(daily_data.split(",").join("")/4)
-            this.hobby_data = parseInt(hobby_data.split(",").join("")/4)
-         } else {
-            this.checked = true
-            this.per = '月'
-         }
-       },
       f_edit: function (st_val, ex_val) {
          this.showModal = 1
          this.st_val = st_val

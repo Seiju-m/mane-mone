@@ -192,6 +192,23 @@ div.income {
     border-color: #27ae60;
     color: #fff;
 }
+
+.toggle-on {
+    background-color: #17A2B8;
+    border: 1px solid #17A2B8;
+}
+
+.btn-primary {
+    background-color: #17A2B8;
+    border: 1px solid #17A2B8;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #17A2B8;
+    border-color: #17A2B8;
+}
+
 .w-m-toggle {
     text-align: right;
     padding-right: 10px;
