@@ -3,10 +3,16 @@ Vue.component('modal', {
 })
 
 var md = new Vue({
+   delimiters: ['[[', ']]'],
    el: '#modal',
    data: {
       st_val: 0,
       ex_val: 0,
+      checked: true,
+      per: '月',
+      food_data: 0,
+      daily_data: 0,
+      hobby_data: 0,
       showModal: false,
       formData: {
          st_val: 0,
@@ -15,6 +21,18 @@ var md = new Vue({
       }
    },
    methods: {
+      toggle_clicked:function(checked, food_data, daily_data, hobby_data){
+         if(checked == true){
+            this.checked = false
+            this.per = '週'
+            this.food_data = parseInt(food_data.split(",").join("")/4)
+            this.daily_data = parseInt(daily_data.split(",").join("")/4)
+            this.hobby_data = parseInt(hobby_data.split(",").join("")/4)
+         } else {
+            this.checked = true
+            this.per = '月'
+         }
+       },
       f_edit: function (st_val, ex_val) {
          this.showModal = 1
          this.st_val = st_val
@@ -127,6 +145,19 @@ var app2 = new Vue({
       }
    }
 })
+
+// var wm_toggle = new Vue({
+//    delimiters: ['[[', ']]'],
+//    el: '#w-m-toggle',
+//    data: {
+//       checked: true
+//    },
+//    methods: {
+//       setEditEnable: function () {
+//          console.log("toggleee")
+//       }
+//    }
+// })
 
 
 // var fs = new Vue({

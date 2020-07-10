@@ -177,11 +177,28 @@ a.logout {
     color: #fff;
 }
 
+.per {
+    font-size: 0.6em;
+}
+
 div.income {
     font-size: 1.4em;
     margin-left: 17px;
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
+
+.toggle-off {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    color: #fff;
+}
+.w-m-toggle {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 60rem; }
+  .toggle.ios .toggle-handle { border-radius: 20rem; }
 
 i.faa-float-i:before {
     font-size: 0.8em;
@@ -219,6 +236,13 @@ div.card-body {
     position: absolute;
     right: 25px;
     bottom: 0;
+}
+
+.pay {
+    font-size: 0.6em;
+    color: #F0EBEB;
+    position: absolute;
+    bottom: 3px;
 }
 
 @media screen and (max-width: 480px) {
@@ -259,42 +283,42 @@ div.card-body {
 
     .food-par {
         position: absolute;
-        top: 240px
+        top: 231px
     }
 
     .daily-par {
         position: absolute;
-        top: 377px;
+        top: 368px;
     }
 
     .hobby-par {
         position: absolute;
-        top: 514px;
+        top: 505px;
     }
 
     .last-par {
         position: absolute;
-        top: 651px;
+        top: 642px;
     }
 
     .rent-par {
         position: absolute;
-        top: 788px;
+        top: 779px;
     }
 
     .scholar-par {
         position: absolute;
-        top: 925px;
+        top: 916px;
     }
 
     .util-par {
         position: absolute;
-        top: 1062px;
+        top: 1053px;
     }
 
     .other-par {
         position: absolute;
-        top: 1199px;
+        top: 1190px;
     }
 
     .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12, .col, .col-auto, .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm, .col-sm-auto, .col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12, .col-md, .col-md-auto, .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg, .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl, .col-xl-auto {
