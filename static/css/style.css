@@ -4,6 +4,10 @@
     font-family: '遊ゴシック','メイリオ', 'Meiryo', sans-serif'
 }
 
+[v-cloak]{
+    display: none;
+}
+
 body {
     background-color: #F5F5F5;
     margin-top: 70px;
