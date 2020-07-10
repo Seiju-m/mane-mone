@@ -162,7 +162,7 @@ div.income {
 }
 
 i.faa-float-i:before {
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
 
 .fa-edit:before {
@@ -202,14 +202,19 @@ div.card-body {
 @media screen and (max-width: 480px) {
 
     .card {
-        width:21.7rem; 
+        width:21.8rem; 
         height: 8rem;
         position: relative;
+    }
+
+    div.col-sm-3 {
+        padding-left: 2px;
     }
 
     div.income {
         font-size: 1.4em;
         margin-left: 2px;
+        padding-left: 16px;
     }
 
     .modal-container {
