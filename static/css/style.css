@@ -201,6 +201,12 @@ div.card-body {
 
 @media screen and (max-width: 480px) {
 
+    .card {
+        width:20rem; 
+        height: 8rem;
+        position: relative;
+    }
+
     .modal-container {
         width: 350px;
         min-height: 270px;
@@ -212,7 +218,7 @@ div.card-body {
     }
     
     div.income {
-        width: 21.8rem;
+        width: 19.8rem;
     }
 
     .food-par {
