@@ -215,7 +215,7 @@ div.income {
 }
 
 .toggle.ios, .toggle-on.ios, .toggle-off.ios { border-radius: 60rem; }
-  .toggle.ios .toggle-handle { border-radius: 20rem; }
+  .toggle.ios .toggle-handle { border-radius: 1rem; }
 
 i.faa-float-i:before {
     font-size: 0.8em;
