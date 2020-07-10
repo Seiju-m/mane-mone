@@ -6,7 +6,9 @@
 
 body {
     background-color: #F5F5F5;
+    margin-top: 70px;
 }
+
 
 .login-form {
     width: 340px;
