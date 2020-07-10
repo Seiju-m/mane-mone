@@ -33,7 +33,7 @@
         <div class="col-sm-3 food-par">
             <div class="card">
                 <div class="card-header food">
-                    食費（設定：￥{{ data.food_st }}）
+                    <i class="fas fa-utensils cat-icon"></i>食費（設定：￥{{ data.food_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="f_edit(`{{ data.food_st }}`,`{{ data.c_food_ex }}`)"></i>
                 </div>
                 <div class="card-body food" style="font-size: 1.5em;">
@@ -45,7 +45,7 @@
         <div class="col-sm-2 rent-par">
             <div class="card">
                 <div class="card-header fixed-ex">
-                    家賃
+                    <i class="fas fa-house-user cat-icon"></i>家賃
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="r_edit(`{{ data.rent_cost }}`)"></i>
                 </div>
                 <div class="card-body">
@@ -60,7 +60,7 @@
         <div class="col-sm-3 daily-par">
             <div class="card">
                 <div class="card-header daily">
-                    日用品（設定：￥{{ data.daily_st }}）
+                    <i class="fas fa-shopping-bag cat-icon"></i>日用品（設定：￥{{ data.daily_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="d_edit(`{{ data.daily_st }}`,`{{ data.c_daily_ex }}`)"></i>
                 </div>
                 <div class="card-body daily">
@@ -72,7 +72,7 @@
         <div class="col-sm-2 scholar-par">
             <div class="card">
                 <div class="card-header fixed-ex">
-                    奨学金
+                    <i class="fas fa-graduation-cap cat-icon"></i>奨学金
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="s_edit(`{{ data.scholar }}`)"></i>
                 </div>
                 <div class="card-body">
@@ -87,7 +87,7 @@
         <div class="col-sm-3 hobby-par">
             <div class="card">
                 <div class="card-header hobby">
-                    趣味（設定：￥{{ data.hobby_st }}）
+                    <i class="fas fa-gamepad cat-icon"></i>趣味（設定：￥{{ data.hobby_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="h_edit(`{{ data.hobby_st }}`,`{{ data.c_hobby_ex }}`)"></i>
                 </div>
                 <div class="card-body hobby">
@@ -99,7 +99,7 @@
         <div class="col-sm-2 util-par">
             <div class="card">
                 <div class="card-header fixed-ex">
-                    光熱費
+                    <i class="fas fa-lightbulb cat-icon"></i>光熱費
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="u_edit(`{{ data.utility_cost }}`)"></i>
                 </div>
                 <div class="card-body">
@@ -113,7 +113,9 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-3 last-par">
             <div class="card">
-                <div class="card-header last">残高</div>
+                <div class="card-header last">
+                    <i class="fas fa-piggy-bank cat-icon"></i>残高
+                </div>
                 <div class="card-body last">
                     <p class="price">￥{{ data.last_ex }}</p>
                 </div>
@@ -123,7 +125,7 @@
         <div class="col-sm-2 other-par">
             <div class="card">
                 <div class="card-header fixed-ex">
-                    通信費・その他
+                    <i class="fas fa-mobile-alt cat-icon"></i>通信費・その他
                     <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="o_edit(`{{ data.other }}`)"></i>
                 </div>
                 <div class="card-body">
