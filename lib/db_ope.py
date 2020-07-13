@@ -12,7 +12,7 @@ Base.query = db_session.query_property()
 
 def init_db():
     import db.models
-    Base.metadata.create_all(bind=engine)
+    Base.metadata.create_all(bind=engine,checkfirst=True)
 
 def get_account():
     import db.models as db
