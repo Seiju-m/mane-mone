@@ -3,13 +3,13 @@ import os
 
 # os.remove('db/manage2.db')
 
-print('before init')
+# print('before init')
 
-def init_db_func():
-    init_db()
+# def init_db_func():
+#     init_db()
 
-def reg_account_func():
-    reg_account()
+# def reg_account_func():
+#     reg_account()
 
 # account = get_account()
 # print(account)
@@ -17,3 +17,7 @@ def reg_account_func():
 # query_all()
 
 # upd_food(10000, 5000)
+
+# init_db()
+
+# reg_account()

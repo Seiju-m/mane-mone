@@ -5,19 +5,19 @@ from collections import defaultdict
 # from user import users
 from flask_sqlalchemy import SQLAlchemy
 from lib import calc, user, db_ope
-from test_db import init_db_func,reg_account_func
+# from test_db import init_db_func,reg_account_func
 
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = "secret"
 
-db_flg = os.path.exists('./db/manage2.db')
-if(db_flg == True):
-    pass
-else:
-    init_db_func()
-    reg_account_func()
+# db_flg = os.path.exists('./db/manage2.db')
+# if(db_flg == True):
+#     pass
+# else:
+#     init_db_func()
+#     reg_account_func()
 
 
 # ユーザーチェックに使用する辞書作成
