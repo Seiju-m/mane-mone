@@ -5,11 +5,11 @@ import os
 import re
 
 DATABASE = 'postgresql'
-USER = 'efqweasvzdxqaw'
-PASSWORD = '00cd7ce89b1fb2069a069f42dc11781a857273a9ac080e08ff9b3441c663af94'
+USER = 'rsownwafjdissl'
+PASSWORD = '04bbfe55fd79187e75d3256230844b9f0e4a2e396a40db8977e4e1e05760c177'
 HOST = 'ec2-34-230-149-169.compute-1.amazonaws.com'
 PORT = '5432'
-DB_NAME = 'deiun42i8fk52p'
+DB_NAME = 'dar8qtfcfi65mk'
 
 CONNECT_STR = '{}://{}:{}@{}:{}/{}'.format(DATABASE, USER, PASSWORD, HOST, PORT, DB_NAME)
 
