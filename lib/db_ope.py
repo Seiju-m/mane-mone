@@ -81,5 +81,3 @@ def upd_other(other):
     data = db_session.query(db.Account).filter(db.Account.user == 'tfjkv').first()
     data.other = other
     db_session.commit()
-
-init_db()
