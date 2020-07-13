@@ -16,6 +16,7 @@ class Account(Base):
     scholar = Column(Integer, nullable=False)
     utility_cost = Column(Integer, nullable=False)
     other = Column(Integer, nullable=False)
+    id = Column(String, primary_key=True)
 
     def __init__(self, user='tfjkv', income=181608, food_ex=0, food_st=20000, daily_ex=0, daily_st=5000,hobby_ex=0, hobby_st=20000,last_ex=0,rent_cost=54860,scholar=16700,utility_cost=0,other=0):
         self.user = user
