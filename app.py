@@ -12,12 +12,12 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = "secret"
 
-db_flg = os.path.exists('./db/manage2.db')
-if(db_flg == True):
-    pass
-else:
-    init_db_func()
-    reg_account_func()
+# db_flg = os.path.exists('./db/manage2.db')
+# if(db_flg == True):
+#     pass
+# else:
+#     init_db_func()
+#     reg_account_func()
 
 
 # ユーザーチェックに使用する辞書作成
