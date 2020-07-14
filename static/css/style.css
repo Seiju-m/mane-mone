@@ -411,7 +411,7 @@ textbox {
 @media screen and (max-width: 480px) {
 
     .ra4 {
-        margin-left:-18px; 
+        margin-left:-2px; 
     }
 
     .calc_disp {
@@ -432,7 +432,7 @@ textbox {
         background-color: #17A2B8;
     }
     .used {
-        margin-left: 48px;
+        margin-left: 43px;
         width: 80%;
     }
     .card {
