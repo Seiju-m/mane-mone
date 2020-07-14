@@ -354,6 +354,7 @@ textbox {
     font-size: 18px;
     padding: 0 !important;
     border: solid 1px #333;
+    border-radius: 0%;
 }
 
 .co1 {
@@ -405,9 +406,10 @@ textbox {
     .plus {
         margin-top: 15px;
         margin-left: 10px;
+        background-color: #17A2B8;
     }
     .used {
-        margin-left: 41px;
+        margin-left: 43px;
         width: 80%;
     }
     .card {
