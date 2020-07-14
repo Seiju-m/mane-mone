@@ -410,8 +410,8 @@ textbox {
 
 @media screen and (max-width: 480px) {
 
-    .ra4 {
-        margin-left:-2px; 
+    .command .is-ope .ra4 {
+        padding-right:3px; 
     }
 
     .calc_disp {
