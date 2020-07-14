@@ -311,9 +311,9 @@ textbox {
 
 /* calc */
 
-.command .co1 .ra4 {
+/* .command .co1 .ra4 {
     margin-left: -8px;
-}
+} */
 
 .calc_disp {
     width: 205px;
@@ -412,7 +412,7 @@ textbox {
         margin-left: 2px;
     }
 
-    .collapsed {
+    .btn .btn-primary .plus .collapsed {
         background-color: #17A2B8;
     }
 
