@@ -163,12 +163,12 @@
                     設定額：<input v-bind:value="st_val" type="text" required="required" name="food_st_e" id="food_st_e"
                         class="edit-input">
                 </div>
-                <div class="form-group edit-form">
+                <div class="form-group edit-form form-inline used">
                     使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e" id="food_ex_e"
                         class="edit-input">
                     <p>
-                        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
-                            aria-expanded="true" aria-controls="multiCollapseExample1"  @click="clear2(`{{ data.food_ex }}`)">+</a>
+                        <a class="btn btn-primary plus" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                            aria-expanded="true" aria-controls="multiCollapseExample1" @click="clear2(`{{ data.food_ex }}`)">+</a>
                     </p>
                 </div>
 
@@ -176,27 +176,27 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px" v-bind:value='[[ calc_obj ]]' />
+                                <input id="result" type="text" size="20" style="width:208px" v-bind:value='[[ calc_obj ]]' class="calc_disp"/>
                                 <br />
-                                <input type="button" value="7" @click="disp(7,`{{ data.food_ex }}`)" />
-                                <input type="button" value="8" @click="disp(8,`{{ data.food_ex }}`)" />
-                                <input type="button" value="9" @click="disp(9,`{{ data.food_ex }}`)" />
-                                <input type="button" value="/" @click="disp('/',`{{ data.food_ex }}`)" />
+                                <input type="button" value="7" @click="disp(7,`{{ data.food_ex }}`)" class="command co1 ra1"/> 
+                                <input type="button" value="8" @click="disp(8,`{{ data.food_ex }}`)" class="command co2 ra1" />
+                                <input type="button" value="9" @click="disp(9,`{{ data.food_ex }}`)" class="command co3 ra1" />
+                                <input type="button" value="C" @click="clear(`{{ data.food_ex }}`)" class="command is-ope ra1" />
                                 <br />
-                                <input type="button" value="4" @click="disp(4,`{{ data.food_ex }}`)" />
-                                <input type="button" value="5" @click="disp(5,`{{ data.food_ex }}`)" />
-                                <input type="button" value="6" @click="disp(6,`{{ data.food_ex }}`)" />
-                                <input type="button" value="*" @click="disp('*',`{{ data.food_ex }}`)" />
+                                <input type="button" value="4" @click="disp(4,`{{ data.food_ex }}`)" class="command co1 ra2" />
+                                <input type="button" value="5" @click="disp(5,`{{ data.food_ex }}`)" class="command co2 ra2" />
+                                <input type="button" value="6" @click="disp(6,`{{ data.food_ex }}`)" class="command co3 ra2" />
+                                <input type="button" value="-" @click="disp('-',`{{ data.food_ex }}`)" class="command is-ope ra2" />
                                 <br />
-                                <input type="button" value="1" @click="disp(1,`{{ data.food_ex }}`)" />
-                                <input type="button" value="2" @click="disp(2,`{{ data.food_ex }}`)" />
-                                <input type="button" value="3" @click="disp(3,`{{ data.food_ex }}`)" />
-                                <input type="button" value="-" @click="disp('-',`{{ data.food_ex }}`)" />
+                                <input type="button" value="1" @click="disp(1,`{{ data.food_ex }}`)" class="command co1 ra3" />
+                                <input type="button" value="2" @click="disp(2,`{{ data.food_ex }}`)" class="command co2 ra3" />
+                                <input type="button" value="3" @click="disp(3,`{{ data.food_ex }}`)" class="command co3 ra3" />
+                                <input type="button" value="+" @click="disp('+',`{{ data.food_ex }}`)" class="command is-ope ra3" />
                                 <br>
-                                <input type="button" value="0" @click="disp(0,`{{ data.food_ex }}`)" />
-                                <input type="button" value="C" @click="clear(`{{ data.food_ex }}`)" />
-                                <input type="button" value="=" @click="enter()" data-toggle="collapse" href="#multiCollapseExample1" />
-                                <input type="button" value="+" @click="disp('+',`{{ data.food_ex }}`)" />
+                                <input type="button" value="0" @click="disp(0,`{{ data.food_ex }}`)" class="command co1 ra4" />
+                                <input type="button" value="00" @click="disp0(00,`{{ data.food_ex }}`)" class="command co2 ra4" />
+                                <input type="button" value="←" @click="del()" class="command co3 ra4" />
+                                <input type="button" value="=" @click="enter()" data-toggle="collapse" href="#multiCollapseExample1" class="command is-ope ra4" />
                             </div>
                         </div>
                     </div>

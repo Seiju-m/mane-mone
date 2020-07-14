@@ -2,6 +2,8 @@ Vue.component('modal', {
    template: '#modal-template'
 })
 
+
+
 function toggle_clicked(checked, food_data, daily_data, hobby_data) {
    if (md.checked == true) {
       md.per = '週'
@@ -31,7 +33,7 @@ var md = new Vue({
       hobby_data: 0,
       calc_obj: 0,
       showModal: false,
-      EnterFlag:false,
+      EnterFlag: false,
       formData: {
          st_val: 0,
          ex_val: 0,
@@ -43,23 +45,34 @@ var md = new Vue({
          var obj = document.getElementById("result");
          obj.value += n;
       },
+      disp0: function (n, food_ex) {
+         var obj = document.getElementById("result");
+         obj.value = obj.value + n + n;
+      },
+      del: function () {
+         var obj = document.getElementById("result");
+         obj.value = obj.value.slice( 0, -1 ) ;
+      },
       enter: function () {
          var obj = document.getElementById("result");
          // var obj2 = document.getElementById("food_ex_e")
          // obj.value = eval(obj.value);
          // obj2.value = eval(obj2.value);
          document.getElementById("food_ex_e").value = eval(obj.value);
+         // this.calc_obj = 0;
          this.EnterFlag = true;
+
       },
       clear: function (food_ex) {
          // var obj = document.getElementById("result");
          // obj.value == "0";
-         this.calc_obj += '+' + food_ex
+         document.getElementById("result").value = 0
       },
       clear2: function (food_ex) {
+         this.calc_obj = 0;
          // var obj = document.getElementById("result");
          // obj.value == "0";
-         this.calc_obj += '+' + food_ex
+         this.calc_obj = document.getElementById("food_ex_e").value + '+' ;
       },
       f_edit: function (st_val, ex_val) {
          this.showModal = 1
@@ -177,6 +190,8 @@ var app2 = new Vue({
       }
    }
 })
+
+
 
 // var wm_toggle = new Vue({
 //    delimiters: ['[[', ']]'],
