@@ -93,7 +93,7 @@ body {
 }
 
 .used {
-    margin-left: 48px;
+    margin-left: 43px;
     width: 85%;
 }
 
@@ -410,7 +410,7 @@ textbox {
 
 @media screen and (max-width: 480px) {
 
-    .command .co1 .ra4 {
+    .ra4 {
         margin-left:-18px; 
     }
 
