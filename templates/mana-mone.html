@@ -9,6 +9,7 @@
     <a href="/logout" align="right" class="logout">logout <i class="fas fa-sign-out-alt"></i></a>
 </nav>
 
+
 <div id="modal" v-cloak>
     <div class="w-m-toggle">
         <input type="checkbox" v-model="checked" data-toggle="toggle" data-style="ios" data-on="月" data-off="週"
@@ -165,11 +166,49 @@
                 <div class="form-group edit-form">
                     使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e" id="food_ex_e"
                         class="edit-input">
+                    <p>
+                        <a class="btn btn-primary" data-toggle="collapse" href="#multiCollapseExample1" role="button"
+                            aria-expanded="true" aria-controls="multiCollapseExample1"  @click="clear2(`{{ data.food_ex }}`)">+</a>
+                    </p>
                 </div>
+
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="">
+                                <input id="result" type="text" size="20" style="width:208px" v-bind:value='[[ calc_obj ]]' />
+                                <br />
+                                <input type="button" value="7" @click="disp(7,`{{ data.food_ex }}`)" />
+                                <input type="button" value="8" @click="disp(8,`{{ data.food_ex }}`)" />
+                                <input type="button" value="9" @click="disp(9,`{{ data.food_ex }}`)" />
+                                <input type="button" value="/" @click="disp('/',`{{ data.food_ex }}`)" />
+                                <br />
+                                <input type="button" value="4" @click="disp(4,`{{ data.food_ex }}`)" />
+                                <input type="button" value="5" @click="disp(5,`{{ data.food_ex }}`)" />
+                                <input type="button" value="6" @click="disp(6,`{{ data.food_ex }}`)" />
+                                <input type="button" value="*" @click="disp('*',`{{ data.food_ex }}`)" />
+                                <br />
+                                <input type="button" value="1" @click="disp(1,`{{ data.food_ex }}`)" />
+                                <input type="button" value="2" @click="disp(2,`{{ data.food_ex }}`)" />
+                                <input type="button" value="3" @click="disp(3,`{{ data.food_ex }}`)" />
+                                <input type="button" value="-" @click="disp('-',`{{ data.food_ex }}`)" />
+                                <br>
+                                <input type="button" value="0" @click="disp(0,`{{ data.food_ex }}`)" />
+                                <input type="button" value="C" @click="clear(`{{ data.food_ex }}`)" />
+                                <input type="button" value="=" @click="enter()" data-toggle="collapse" href="#multiCollapseExample1" />
+                                <input type="button" value="+" @click="disp('+',`{{ data.food_ex }}`)" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>
             </form>
+
         </div>
     </modal>
 
