@@ -315,9 +315,7 @@ textbox {
     margin-left: -8px;
 } */
 
-.command .co1 .ra4 {
-    margin-left:-8px; 
-}
+
 
 .calc_disp {
     width: 205px;
@@ -412,6 +410,10 @@ textbox {
 
 @media screen and (max-width: 480px) {
 
+    .command .co1 .ra4 {
+        margin-left:-18px; 
+    }
+
     .calc_disp {
         margin-left: 2px;
     }
@@ -430,7 +432,7 @@ textbox {
         background-color: #17A2B8;
     }
     .used {
-        margin-left: 38px;
+        margin-left: 48px;
         width: 80%;
     }
     .card {
