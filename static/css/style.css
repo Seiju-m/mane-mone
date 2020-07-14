@@ -93,7 +93,7 @@ body {
 }
 
 .used {
-    margin-left: 158px;
+    margin-left: 48px;
     width: 85%;
 }
 
@@ -310,6 +310,10 @@ textbox {
 }
 
 /* calc */
+
+.command .co1 .ra4 {
+    margin-left: -2px;
+}
 
 .calc_disp {
     width: 205px;
