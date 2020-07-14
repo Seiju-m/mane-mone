@@ -315,6 +315,10 @@ textbox {
     margin-left: -8px;
 } */
 
+.command .co1 .ra4 {
+    margin-left:-8px; 
+}
+
 .calc_disp {
     width: 205px;
     background: #5b5b5b;
@@ -412,7 +416,7 @@ textbox {
         margin-left: 2px;
     }
 
-    .btn .btn-primary .plus .collapsed {
+    .btn-primary:hover {
         background-color: #17A2B8;
     }
 
@@ -426,7 +430,7 @@ textbox {
         background-color: #17A2B8;
     }
     .used {
-        margin-left: 18px;
+        margin-left: 38px;
         width: 80%;
     }
     .card {
