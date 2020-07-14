@@ -1,4 +1,9 @@
 @charset 'utf-8';
+
+input{
+    -webkit-appearance: none;
+    }
+
 * {
     font-family: '遊ゴシック', 'メイリオ', 'Meiryo', sans-serif'
 
@@ -354,7 +359,6 @@ textbox {
     font-size: 18px;
     padding: 0 !important;
     border: solid 1px #333;
-    border-radius: 0%;
 }
 
 .co1 {
@@ -403,13 +407,21 @@ textbox {
         margin-left: 2px;
     }
 
+    .collapse {
+        background-color: #17A2B8;
+    }
+
+    .command {
+        border-radius: 0%;
+    }
+
     .plus {
         margin-top: 15px;
         margin-left: 10px;
         background-color: #17A2B8;
     }
     .used {
-        margin-left: 43px;
+        margin-left: 48px;
         width: 80%;
     }
     .card {
