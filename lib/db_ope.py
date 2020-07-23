@@ -6,7 +6,7 @@ import re
 import datetime
 import pytz
 
-dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+
 
 DATABASE = 'postgresql'
 USER = 'rsownwafjdissl'
@@ -54,6 +54,7 @@ def upd_income(income):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.income = income
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
@@ -62,6 +63,7 @@ def upd_food(food_st, food_ex):
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.food_st = food_st
     data.food_ex = food_ex
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
     return 'res'
@@ -71,6 +73,7 @@ def upd_daily(daily_st, daily_ex):
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.daily_st = daily_st
     data.daily_ex = daily_ex
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
@@ -79,6 +82,7 @@ def upd_hobby(hobby_st, hobby_ex):
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.hobby_st = hobby_st
     data.hobby_ex = hobby_ex
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
@@ -86,6 +90,7 @@ def upd_rent(rent_cost):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.rent_cost = rent_cost
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
@@ -93,6 +98,7 @@ def upd_scholar(scholar):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.scholar = scholar
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
@@ -100,6 +106,7 @@ def upd_util(utility_cost):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.utility_cost = utility_cost
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
@@ -107,5 +114,6 @@ def upd_other(other):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.other = other
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
