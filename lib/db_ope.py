@@ -4,8 +4,9 @@ from sqlalchemy.ext.declarative import declarative_base
 import os
 import re
 import datetime
+import pytz
 
-dt_now = datetime.datetime.now()
+dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
 
 DATABASE = 'postgresql'
 USER = 'rsownwafjdissl'

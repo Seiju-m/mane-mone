@@ -11,7 +11,6 @@
 
 
 <div id="modal" v-cloak>
-    <div class="upd_date">最終更新日：{{ data.update_date }}</div>
     
     <div class="w-m-toggle">
         <input type="checkbox" v-model="checked" data-toggle="toggle" data-style="ios" data-on="月" data-off="週"
@@ -162,6 +161,8 @@
             </div>
         </div>
     </div>
+
+    <div class="upd_date">最終更新日：{{ data.update_date }}</div>
 
     <!---------------------------- modal ---------------------------->
 
