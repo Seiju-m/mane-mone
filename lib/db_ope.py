@@ -3,6 +3,9 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 import os
 import re
+import datetime
+
+dt_now = datetime.datetime.now()
 
 DATABASE = 'postgresql'
 USER = 'rsownwafjdissl'
@@ -50,6 +53,7 @@ def upd_income(income):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.income = income
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
 def upd_food(food_st, food_ex):
@@ -57,6 +61,7 @@ def upd_food(food_st, food_ex):
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.food_st = food_st
     data.food_ex = food_ex
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
     return 'res'
 
@@ -65,6 +70,7 @@ def upd_daily(daily_st, daily_ex):
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.daily_st = daily_st
     data.daily_ex = daily_ex
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
 def upd_hobby(hobby_st, hobby_ex):
@@ -72,28 +78,33 @@ def upd_hobby(hobby_st, hobby_ex):
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.hobby_st = hobby_st
     data.hobby_ex = hobby_ex
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
 def upd_rent(rent_cost):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.rent_cost = rent_cost
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
 def upd_scholar(scholar):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.scholar = scholar
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
 def upd_util(utility_cost):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.utility_cost = utility_cost
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
 def upd_other(other):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
     data.other = other
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()

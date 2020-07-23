@@ -1,5 +1,9 @@
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, Date
 from lib.db_ope import Base
+import datetime
+
+dt_now = datetime.datetime.now()
+
 
 class Account(Base):
     __tablename__ = 'account'
@@ -16,9 +20,10 @@ class Account(Base):
     scholar = Column(Integer, nullable=False)
     utility_cost = Column(Integer, nullable=False)
     other = Column(Integer, nullable=False)
+    update_date = Column(Date)
     # id = Column(String)
 
-    def __init__(self, user='tfjkv', income=181608, food_ex=0, food_st=20000, daily_ex=0, daily_st=5000,hobby_ex=0, hobby_st=20000,last_ex=0,rent_cost=54860,scholar=16700,utility_cost=0,other=0):
+    def __init__(self, user='tfjkv', income=181608, food_ex=0, food_st=20000, daily_ex=0, daily_st=5000,hobby_ex=0, hobby_st=20000,last_ex=0,rent_cost=54860,scholar=16700,utility_cost=0,other=0,update_date=dt_now.strftime('%Y年%m月%d日 %H:%M:%S')):
         self.user = user
         self.income = income
         self.food_ex = food_ex

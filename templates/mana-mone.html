@@ -11,6 +11,8 @@
 
 
 <div id="modal" v-cloak>
+    <div class="upd_date">最終更新日：{{ data.update_date }}</div>
+    
     <div class="w-m-toggle">
         <input type="checkbox" v-model="checked" data-toggle="toggle" data-style="ios" data-on="月" data-off="週"
             onchange="toggle_clicked(checked, `{{ data.c_food_ex }}`, `{{ data.c_daily_ex }}`, `{{ data.c_hobby_ex }}`)">
@@ -23,7 +25,8 @@
         <div class="col-sm-2"></div>
         <div class="col-sm-3 alert alert-warning income" role="alert">
             ￥{{ data.income_d }}
-            <i class="far fa-edit fa-pull-right faa-float faa-float-i animated-hover" @click="i_edit(`{{ data.income }}`)"></i>
+            <i class="far fa-edit fa-pull-right faa-float faa-float-i animated-hover"
+                @click="i_edit(`{{ data.income }}`)"></i>
         </div>
     </div>
     <div class="row">
@@ -36,7 +39,8 @@
             <div class="card fcard">
                 <div class="card-header food">
                     <i class="fas fa-utensils  fa-fw cat-icon"></i>食費（設定：￥{{ data.food_st }}）
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="f_edit(`{{ data.food_st }}`,`{{ data.c_food_ex }}`)"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover"
+                        @click="f_edit(`{{ data.food_st }}`,`{{ data.c_food_ex }}`)"></i>
                 </div>
                 <div class="card-body food">
                     <p class="pay">使用 ￥{{ data.food_ex_d }}</p>
@@ -53,7 +57,8 @@
             <div class="card">
                 <div class="card-header fixed-ex">
                     <i class="fas fa-home  fa-fw cat-icon"></i>家賃
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="r_edit(`{{ data.rent_cost }}`)"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover"
+                        @click="r_edit(`{{ data.rent_cost }}`)"></i>
                 </div>
                 <div class="card-body">
                     <p class="price">￥{{ data.rent_cost_d }}</p>
@@ -68,7 +73,8 @@
             <div class="card fdaily">
                 <div class="card-header daily">
                     <i class="fas fa-shopping-bag  fa-fw cat-icon"></i>日用品（設定：￥{{ data.daily_st }}）
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="d_edit(`{{ data.daily_st }}`,`{{ data.c_daily_ex }}`)"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover"
+                        @click="d_edit(`{{ data.daily_st }}`,`{{ data.c_daily_ex }}`)"></i>
                 </div>
                 <div class="card-body daily">
                     <p class="pay">使用 ￥{{ data.daily_ex_d }}</p>
@@ -85,7 +91,8 @@
             <div class="card">
                 <div class="card-header fixed-ex">
                     <i class="fas fa-graduation-cap  fa-fw cat-icon"></i>奨学金
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="s_edit(`{{ data.scholar }}`)"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover"
+                        @click="s_edit(`{{ data.scholar }}`)"></i>
                 </div>
                 <div class="card-body">
                     <p class="price">￥{{ data.scholar_d }}</p>
@@ -100,7 +107,8 @@
             <div class="card fhobby">
                 <div class="card-header hobby">
                     <i class="fas fa-gamepad  fa-fw cat-icon"></i>趣味（設定：￥{{ data.hobby_st }}）
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="h_edit(`{{ data.hobby_st }}`,`{{ data.c_hobby_ex }}`)"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover"
+                        @click="h_edit(`{{ data.hobby_st }}`,`{{ data.c_hobby_ex }}`)"></i>
                 </div>
                 <div class="card-body hobby">
                     <p class="pay">使用 ￥{{ data.hobby_ex_d }}</p>
@@ -117,7 +125,8 @@
             <div class="card">
                 <div class="card-header fixed-ex">
                     <i class="fas fa-lightbulb  fa-fw cat-icon"></i>光熱費
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="u_edit(`{{ data.utility_cost }}`)"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover"
+                        @click="u_edit(`{{ data.utility_cost }}`)"></i>
                 </div>
                 <div class="card-body">
                     <p class="price">￥{{ data.utility_cost_d }}</p>
@@ -144,7 +153,8 @@
             <div class="card last-card">
                 <div class="card-header fixed-ex">
                     <i class="fas fa-mobile-alt  fa-fw cat-icon"></i>通信費・その他
-                    <i class="far fa-edit fa-pull-right faa-float animated-hover" @click="o_edit(`{{ data.other }}`)"></i>
+                    <i class="far fa-edit fa-pull-right faa-float animated-hover"
+                        @click="o_edit(`{{ data.other }}`)"></i>
                 </div>
                 <div class="card-body">
                     <p class="price">￥{{ data.other_d }}</p>
@@ -164,11 +174,12 @@
                         class="edit-input">
                 </div>
                 <div class="form-group edit-form form-inline used">
-                    使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e" id="food_ex_e"
-                        class="edit-input">
+                    使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e"
+                        id="food_ex_e" class="edit-input">
                     <p>
-                        <a class="btn btn-primary plus" data-toggle="collapse" href="#multiCollapseExample1" role="button"
-                            aria-expanded="true" aria-controls="multiCollapseExample1" @click="clear2(`{{ data.food_ex }}`)">+</a>
+                        <a class="btn btn-primary plus" data-toggle="collapse" href="#multiCollapseExample1"
+                            role="button" aria-expanded="true" aria-controls="multiCollapseExample1"
+                            @click="clear2(`{{ data.food_ex }}`)">+</a>
                     </p>
                 </div>
 
@@ -176,29 +187,45 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px" v-bind:value='[[ calc_obj ]]' class="calc_disp"/>
+                                <input id="result" type="text" size="20" style="width:208px"
+                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
                                 <br />
-                                <input type="button" value="7" @click="disp(7,`{{ data.food_ex }}`)" class="command co1 ra1"/> 
-                                <input type="button" value="8" @click="disp(8,`{{ data.food_ex }}`)" class="command co2 ra1" />
-                                <input type="button" value="9" @click="disp(9,`{{ data.food_ex }}`)" class="command co3 ra1" />
-                                <input type="button" value="C" @click="clear(`{{ data.food_ex }}`)" class="command is-ope ra1" />
+                                <input type="button" value="7" @click="disp(7,`{{ data.food_ex }}`)"
+                                    class="command co1 ra1" />
+                                <input type="button" value="8" @click="disp(8,`{{ data.food_ex }}`)"
+                                    class="command co2 ra1" />
+                                <input type="button" value="9" @click="disp(9,`{{ data.food_ex }}`)"
+                                    class="command co3 ra1" />
+                                <input type="button" value="C" @click="clear(`{{ data.food_ex }}`)"
+                                    class="command is-ope ra1" />
                                 <br />
-                                <input type="button" value="4" @click="disp(4,`{{ data.food_ex }}`)" class="command co1 ra2" />
-                                <input type="button" value="5" @click="disp(5,`{{ data.food_ex }}`)" class="command co2 ra2" />
-                                <input type="button" value="6" @click="disp(6,`{{ data.food_ex }}`)" class="command co3 ra2" />
-                                <input type="button" value="-" @click="disp('-',`{{ data.food_ex }}`)" class="command is-ope ra2" />
+                                <input type="button" value="4" @click="disp(4,`{{ data.food_ex }}`)"
+                                    class="command co1 ra2" />
+                                <input type="button" value="5" @click="disp(5,`{{ data.food_ex }}`)"
+                                    class="command co2 ra2" />
+                                <input type="button" value="6" @click="disp(6,`{{ data.food_ex }}`)"
+                                    class="command co3 ra2" />
+                                <input type="button" value="-" @click="disp('-',`{{ data.food_ex }}`)"
+                                    class="command is-ope ra2" />
                                 <br />
-                                <input type="button" value="1" @click="disp(1,`{{ data.food_ex }}`)" class="command co1 ra3" />
-                                <input type="button" value="2" @click="disp(2,`{{ data.food_ex }}`)" class="command co2 ra3" />
-                                <input type="button" value="3" @click="disp(3,`{{ data.food_ex }}`)" class="command co3 ra3" />
-                                <input type="button" value="+" @click="disp('+',`{{ data.food_ex }}`)" class="command is-ope ra3" />
+                                <input type="button" value="1" @click="disp(1,`{{ data.food_ex }}`)"
+                                    class="command co1 ra3" />
+                                <input type="button" value="2" @click="disp(2,`{{ data.food_ex }}`)"
+                                    class="command co2 ra3" />
+                                <input type="button" value="3" @click="disp(3,`{{ data.food_ex }}`)"
+                                    class="command co3 ra3" />
+                                <input type="button" value="+" @click="disp('+',`{{ data.food_ex }}`)"
+                                    class="command is-ope ra3" />
                                 <br />
-                                <input type="button" value="0" @click="disp(0,`{{ data.food_ex }}`)" class="command co1 ra4" />
-                                <input type="button" value="00" @click="disp0(00,`{{ data.food_ex }}`)" class="command co2 ra4" />
+                                <input type="button" value="0" @click="disp(0,`{{ data.food_ex }}`)"
+                                    class="command co1 ra4" />
+                                <input type="button" value="00" @click="disp0(00,`{{ data.food_ex }}`)"
+                                    class="command co2 ra4" />
                                 <input type="button" value="←" @click="del()" class="command co3 ra4" />
-                                <input type="button" value="=" @click="enter()" data-toggle="collapse" href="#multiCollapseExample1" class="command is-ope ra4" />
+                                <input type="button" value="=" @click="enter()" data-toggle="collapse"
+                                    href="#multiCollapseExample1" class="command is-ope ra4" />
                                 <br />
-                                
+
                             </div>
                         </div>
                     </div>
@@ -257,7 +284,8 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('rent')" id="rent_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="rent_e" id="rent_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="rent_e" id="rent_e"
+                        class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -286,7 +314,8 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('util')" id="util_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="util_e" id="util_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="util_e" id="util_e"
+                        class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -300,7 +329,8 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('other')" id="other_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="other_e" id="other_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="other_e" id="other_e"
+                        class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
@@ -314,7 +344,8 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('income')" id="income_f_e">
                 <div class="form-group edit-form">
-                    金額：<input v-bind:value="st_val" type="text" required="required" name="income_e" id="income_e" class="edit-input">
+                    金額：<input v-bind:value="st_val" type="text" required="required" name="income_e" id="income_e"
+                        class="edit-input">
                 </div>
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
