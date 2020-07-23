@@ -18,6 +18,7 @@ input{
     position: absolute;
     top: 1330px;
     margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 html {
