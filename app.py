@@ -81,9 +81,13 @@ def upd():
     elif request.json.get('cat') == 'util':
         db_ope.upd_util(request.json.get('st_val'))
     elif request.json.get('cat') == 'other':
-        db_ope.upd_other(request.json.get('st_val'))
+        db_ope.upd_other(request.json.get('st_val'), request.json.get('ex_val'))
     elif request.json.get('cat') == 'income':
         db_ope.upd_income(request.json.get('st_val'))
+    elif request.json.get('cat') == 'transport':
+        db_ope.upd_transport(request.json.get('st_val'), request.json.get('ex_val'))
+    elif request.json.get('cat') == 'commu':
+        db_ope.upd_commu(request.json.get('st_val'))
     else:
         print('catagory is not set')
     res = jsonify({

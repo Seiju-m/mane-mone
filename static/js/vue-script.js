@@ -4,12 +4,14 @@ Vue.component('modal', {
 
 
 
-function toggle_clicked(checked, food_data, daily_data, hobby_data) {
+function toggle_clicked(checked, food_data, daily_data, hobby_data, transport_data, other_data) {
    if (md.checked == true) {
       md.per = '週'
       md.food_data = parseInt(food_data.split(",").join("") / 4).toLocaleString()
       md.daily_data = parseInt(daily_data.split(",").join("") / 4).toLocaleString()
       md.hobby_data = parseInt(hobby_data.split(",").join("") / 4).toLocaleString()
+      md.transport_data = parseInt(transport_data.split(",").join("") / 4).toLocaleString()
+      md.other_data = parseInt(other_data.split(",").join("") / 4).toLocaleString()
       md.checked = false
    } else {
       md.per = '月'
@@ -31,6 +33,9 @@ var md = new Vue({
       food_data: 0,
       daily_data: 0,
       hobby_data: 0,
+      transport_data: 0,
+      other_data: 0,
+      commu_data: 0,
       calc_obj: 0,
       showModal: false,
       EnterFlag: false,
@@ -51,17 +56,42 @@ var md = new Vue({
       },
       del: function () {
          var obj = document.getElementById("result");
-         obj.value = obj.value.slice( 0, -1 ) ;
+         obj.value = obj.value.slice(0, -1);
       },
       enter: function () {
          var obj = document.getElementById("result");
-         // var obj2 = document.getElementById("food_ex_e")
-         // obj.value = eval(obj.value);
-         // obj2.value = eval(obj2.value);
          document.getElementById("food_ex_e").value = eval(obj.value);
-         // this.calc_obj = 0;
          this.EnterFlag = true;
-
+      },
+      enter_d: function () {
+         var obj = document.getElementById("result");
+         document.getElementById("daily_ex_e").value = eval(obj.value);
+         this.EnterFlag = true;
+      },
+      enter_h: function () {
+         var obj = document.getElementById("result");
+         document.getElementById("hobby_ex_e").value = eval(obj.value);
+         this.EnterFlag = true;
+      },
+      enter_u: function () {
+         var obj = document.getElementById("result");
+         document.getElementById("util_e").value = eval(obj.value);
+         this.EnterFlag = true;
+      },
+      enter_o: function () {
+         var obj = document.getElementById("result");
+         document.getElementById("other_ex_e").value = eval(obj.value);
+         this.EnterFlag = true;
+      },
+      enter_c: function () {
+         var obj = document.getElementById("result");
+         document.getElementById("commu_e").value = eval(obj.value);
+         this.EnterFlag = true;
+      },
+      enter_t: function () {
+         var obj = document.getElementById("result");
+         document.getElementById("transport_ex_e").value = eval(obj.value);
+         this.EnterFlag = true;
       },
       clear: function (food_ex) {
          // var obj = document.getElementById("result");
@@ -70,9 +100,31 @@ var md = new Vue({
       },
       clear2: function (food_ex) {
          this.calc_obj = 0;
-         // var obj = document.getElementById("result");
-         // obj.value == "0";
-         this.calc_obj = document.getElementById("food_ex_e").value + '+' ;
+         this.calc_obj = document.getElementById("food_ex_e").value + '+';
+      },
+      clear_d: function (food_ex) {
+         this.calc_obj = 0;
+         this.calc_obj = document.getElementById("daily_ex_e").value + '+';
+      },
+      clear_c: function (food_ex) {
+         this.calc_obj = 0;
+         this.calc_obj = document.getElementById("commu_e").value + '+';
+      },
+      clear_h: function (food_ex) {
+         this.calc_obj = 0;
+         this.calc_obj = document.getElementById("hobby_ex_e").value + '+';
+      },
+      clear_t: function (food_ex) {
+         this.calc_obj = 0;
+         this.calc_obj = document.getElementById("transport_ex_e").value + '+';
+      },
+      clear_u: function (food_ex) {
+         this.calc_obj = 0;
+         this.calc_obj = document.getElementById("util_e").value + '+';
+      },
+      clear_o: function (food_ex) {
+         this.calc_obj = 0;
+         this.calc_obj = document.getElementById("other_ex_e").value + '+';
       },
       f_edit: function (st_val, ex_val) {
          this.showModal = 1
@@ -101,13 +153,23 @@ var md = new Vue({
          this.showModal = 6
          this.st_val = st_val
       },
-      o_edit: function (st_val) {
+      c_edit: function (st_val) {
          this.showModal = 7
          this.st_val = st_val
       },
       i_edit: function (st_val) {
          this.showModal = 8
          this.st_val = st_val
+      },
+      t_edit: function (st_val, ex_val) {
+         this.showModal = 9
+         this.st_val = st_val
+         this.ex_val = ex_val
+      },
+      o_edit: function (st_val, ex_val) {
+         this.showModal = 10
+         this.st_val = st_val
+         this.ex_val = ex_val
       },
       submit: function (cat) {
          this.formData.cat = cat
@@ -133,8 +195,16 @@ var md = new Vue({
             case 'util':
                this.formData.st_val = document.forms.util_f_e.util_e.value
                break;
+            case 'transport':
+               this.formData.ex_val = document.forms.transport_e.transport_ex_e.value
+               this.formData.st_val = document.forms.transport_e.transport_st_e.value
+               break;
             case 'other':
-               this.formData.st_val = document.forms.other_f_e.other_e.value
+               this.formData.ex_val = document.forms.other_e.other_ex_e.value
+               this.formData.st_val = document.forms.other_e.other_st_e.value
+               break;
+            case 'commu':
+               this.formData.st_val = document.forms.commu_f_e.commu_e.value
                break;
             case 'income':
                this.formData.st_val = document.forms.income_f_e.income_e.value

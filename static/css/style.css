@@ -15,8 +15,6 @@ input{
 
 .upd_date {
     padding-left: 10px;
-    position: absolute;
-    top: 1330px;
     margin-bottom: 20px;
     padding-bottom: 20px;
 }
@@ -75,6 +73,8 @@ body {
     background-color: #95a5a6;
 }
 
+/* card color*/
+
 .food {
     background-color: #c0392b;
     color: white;
@@ -90,10 +90,22 @@ body {
     color: white;
 }
 
+.transport {
+    background-color: #3949AB;
+    color: white;
+}
+
 .last {
+    background-color: #263238;
+    color: white;
+}
+
+.other {
     background-color: #f39c12;
     color: white;
 }
+
+/* for calc design */
 
 .plus {
     margin-top: 15px;
@@ -101,8 +113,7 @@ body {
 }
 
 .used {
-    margin-left: 43px;
-    width: 85%;
+    padding-left: 160px;
 }
 
 #modal {
@@ -437,6 +448,7 @@ textbox {
     .used {
         margin-left: 43px;
         width: 80%;
+        padding-left: 0;
     }
     .card {
         width: 21.8rem;
@@ -465,6 +477,8 @@ textbox {
     div.income {
         width: 21.8rem;
     }
+
+    /* card position*/
     .food-par {
         position: absolute;
         top: 231px
@@ -477,26 +491,43 @@ textbox {
         position: absolute;
         top: 505px;
     }
-    .last-par {
+    .transport-par {
         position: absolute;
         top: 642px;
     }
-    .rent-par {
+    .other-par {
         position: absolute;
         top: 779px;
     }
-    .scholar-par {
+    .rent-par {
         position: absolute;
         top: 916px;
     }
-    .util-par {
+    .scholar-par {
         position: absolute;
         top: 1053px;
     }
-    .other-par {
+    .util-par {
         position: absolute;
         top: 1190px;
     }
+    .commu-par {
+        position: absolute;
+        top: 1327px;
+    }
+    .last-par {
+        position: absolute;
+        top: 1464px;
+    }
+
+    .upd_date {
+        padding-left: 10px;
+        position: absolute;
+        top: 1470px;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+
     .last-card {
         margin-bottom: 20px;
     }
@@ -514,6 +545,13 @@ textbox {
         border: 1px solid #7c369b !important;
     }
     .flast {
+        border: 1px solid #263238 !important;
+    }
+    .ftransport {
+        border: 1px solid #3949AB !important;
+    }
+    .fother {
         border: 1px solid #df8c06 !important;
     }
+}
 }

@@ -110,10 +110,28 @@ def upd_util(utility_cost):
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
 
-def upd_other(other):
+def upd_other(other_st, other_ex):
     import db.models as db
     data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
-    data.other = other
+    data.other_st = other_st
+    data.other_ex = other_ex
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
+    db_session.commit()
+
+def upd_transport(transport_st, transport_ex):
+    import db.models as db
+    data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
+    data.transport_st = transport_st
+    data.transport_ex = transport_ex
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+    data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
+    db_session.commit()
+
+def upd_commu(commu):
+    import db.models as db
+    data = db_session.query(db.Account).filter(db.Account.id == 'tfjkv').first()
+    data.commu = commu
     dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
     data.update_date = dt_now.strftime('%Y/%m/%d %H:%M:%S')
     db_session.commit()
