@@ -2,7 +2,11 @@ Vue.component('modal', {
    template: '#modal-template'
 })
 
+const path = location.pathname ;
 
+date = new Date();
+now_month = date.getFullYear() + ("0" + (date.getMonth())).slice(-2);
+sessionStorage['month'] = now_month;
 
 function toggle_clicked(checked, food_data, daily_data, hobby_data, transport_data, other_data) {
    if (md.checked == true) {
@@ -18,8 +22,6 @@ function toggle_clicked(checked, food_data, daily_data, hobby_data, transport_da
       md.checked = true
    }
 }
-
-
 
 var md = new Vue({
    delimiters: ['[[', ']]'],
@@ -226,12 +228,52 @@ var md = new Vue({
             })
          console.log("submitted")
       },
-      // bott: function (food_ex) {
-      //    this.calc_obj + food_ex
-      //    console.log("button clicked")
-      // }
    }
 })
+
+// var createReport = new Vue({
+//    delimiters: ['[[', ']]'],
+//    el: '#navbar',
+//    data: {
+//       count: 0,
+//       hello: 'world',
+//       formData: {
+//          month: 000000
+//      },
+//    },
+//    methods: {
+//       createReport: function (data) {
+//          // this.formData.cat = cat
+//          console.log("formdata" + JSON.stringify(this.formData))
+//          console.log("dataa" + data.food_ex)
+//          let now_month = sessionStorage.getItem('month')
+//          console.log("now_month" + now_month)
+//          this.formData.month = now_month
+//          $.LoadingOverlay("show");
+//          axios.post('/createReport', this.formData)
+//             .then(response => {
+//                if(response.data.status_code == '500'){
+//                   console.log("already data")
+//                } else {
+//                   if(path == '/monthly/'){
+//                      reloads(response.data)
+//                   console.log("reload")
+//                   }
+//                }
+//                console.log("response" + JSON.stringify(response))
+//                // setTimeout(() => {
+//                $.LoadingOverlay("hide");
+//                this.showModal = false
+//                // document.location.reload()
+//                // }, 3000)
+//             })
+//             .catch(error => {
+//                console.log("error" + error)
+//             })
+//          console.log("submitted")
+//       },
+//    }
+// })
 
 
 var app = new Vue({

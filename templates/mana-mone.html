@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
-<nav class="navbar navbar-dark bg-dark fixed-top">
-    <a href="#" class="navbar-brand">
-        <i class="fas fa-wallet"></i>
-        Manage Money
-    </a>
-    <a href="/logout" align="right" class="logout">Logout <i class="fas fa-sign-out-alt"></i></a>
-</nav>
-
 
 <div id="modal" v-cloak>
+
+    <!-- pythonからjsへデータの受け渡し用 -->
+    <input type="hidden" id="chart_income" value="{{ data.income }}">
+    <input type="hidden" id="chart_food" value="{{ data.food_ex }}">
+    <input type="hidden" id="chart_daily" value="{{ data.daily_ex }}">
+    <input type="hidden" id="chart_hobby" value="{{ data.hobby_ex }}">
+    <input type="hidden" id="chart_transport" value="{{ data.transport_ex }}">
+    <input type="hidden" id="chart_other" value="{{ data.other_ex }}">
+    <input type="hidden" id="chart_last" value="{{ data.last_ex }}">
+    <input type="hidden" id="chart_rent" value="{{ data.rent_cost }}">
+    <input type="hidden" id="chart_scholar" value="{{ data.scholar }}">
+    <input type="hidden" id="chart_utility" value="{{ data.utility_cost }}">
+    <input type="hidden" id="chart_commu" value="{{ data.commu }}">
+    <input type="hidden" id="chart_month" value="{{ data.month }}">
+    
 
     <div class="w-m-toggle">
         <input type="checkbox" v-model="checked" data-toggle="toggle" data-style="ios" data-on="月" data-off="週"
             onchange="toggle_clicked(checked, `{{ data.c_food_ex }}`, `{{ data.c_daily_ex }}`, `{{ data.c_hobby_ex }}`, `{{ data.c_transport_ex }}`, `{{ data.c_other_ex }}`)">
     </div>
+    
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-1">収入</div>
@@ -53,13 +61,13 @@
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-3 rent-par">
-            <div class="card">
-                <div class="card-header fixed-ex">
+            <div class="card frent">
+                <div class="card-header rent">
                     <i class="fas fa-home  fa-fw cat-icon"></i>家賃
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
                         @click="r_edit(`{{ data.rent_cost }}`)"></i>
                 </div>
-                <div class="card-body">
+                <div class="card-body rent">
                     <p class="price">￥{{ data.rent_cost_d }}</p>
                 </div>
             </div>
@@ -87,13 +95,13 @@
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-3 scholar-par">
-            <div class="card">
-                <div class="card-header fixed-ex">
+            <div class="card fscholar">
+                <div class="card-header scholar">
                     <i class="fas fa-graduation-cap  fa-fw cat-icon"></i>奨学金
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
                         @click="s_edit(`{{ data.scholar }}`)"></i>
                 </div>
-                <div class="card-body">
+                <div class="card-body scholar">
                     <p class="price">￥{{ data.scholar_d }}</p>
                 </div>
             </div>
@@ -121,13 +129,13 @@
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-3 util-par">
-            <div class="card">
-                <div class="card-header fixed-ex">
+            <div class="card futility">
+                <div class="card-header utility">
                     <i class="fas fa-lightbulb  fa-fw cat-icon"></i>光熱費
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
                         @click="u_edit(`{{ data.utility_cost }}`)"></i>
                 </div>
-                <div class="card-body">
+                <div class="card-body utility">
                     <p class="price">￥{{ data.utility_cost_d }}</p>
                 </div>
             </div>
@@ -156,13 +164,13 @@
         </div>
         <div class="col-sm-1"></div>
         <div class="col-sm-3 commu-par">
-            <div class="card last-card">
-                <div class="card-header fixed-ex">
+            <div class="card fcommu">
+                <div class="card-header commu">
                     <i class="fas fa-mobile-alt  fa-fw cat-icon"></i>通信費
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
                         @click="c_edit(`{{ data.commu }}`)"></i>
-                </div>
-                <div class="card-body">
+                </div> 
+                <div class="card-body commu">
                     <p class="price">￥{{ data.commu_d }}</p>
                 </div>
             </div>
@@ -176,7 +184,7 @@
         <div class="col-sm-3 other-par">
             <div class="card fother">
                 <div class="card-header other">
-                    <i class="fas fa-ellipsis-h fa-fw cat-icon"></i></i>その他（設定：￥{{ data.other_st }}）
+                    <i class="fas fa-ellipsis-h fa-fw cat-icon"></i>その他（設定：￥{{ data.other_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
                     @click="o_edit(`{{ data.other_st }}`,`{{ data.c_other_ex }}`)"></i>
                 </div>

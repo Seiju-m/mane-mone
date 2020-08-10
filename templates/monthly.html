@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<div id="report" v-cloak>
+
+    <h3 class="text-center">[[ title_month ]]</h3>
+    <h5 class="text-center">貯金額：￥[[ last ]]</h5>
+
+
+
+    <div class="container center-block">
+        <div class="row center-block">
+            <div class="col-sm-2 d-flex align-items-center justify-content-end arrow-left">
+                <i class="fas fa-angle-double-left fa-3x text-right my-color" @click="prev_month()"></i>
+            </div>
+            <div class="col-sm-8 chart">
+                <div id="chart" class="col-sm-5"></div>
+            </div>
+            <div class="col-sm-2 d-flex align-items-center arrow-right">
+                <i class="fas fa-angle-double-right fa-3x my-color" @click="next_month()"></i>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="mx-auto card Eb-block" style="width: 400px;">
+        <div class="card-body Eb-body" style="height: 100%;">
+            <div class="Eb">
+                <!-- <i class="fas fa-utensils  fa-fw cat-icon"></i> -->
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #C0392B;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-utensils fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">食費：</span>
+                <span class="Eb-price text-right float-right">￥[[ food ]] </span>
+            </div>
+            <div class="Eb">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #27AE60;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-shopping-bag fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">日用品：</span>
+                <span class="Eb-price text-right float-right">￥[[ daily ]] </span>
+            </div>
+            <div class="Eb">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #8E44AD;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-gamepad fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">趣味・娯楽：</span>
+                <span class="Eb-price text-right float-right">￥[[ hobby ]] </span>
+            </div>
+            <div class="Eb">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #3949AB;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-subway fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">交通費：</span>
+                <span class="Eb-price text-right float-right">￥[[ transport ]] </span>
+            </div>
+            <div class="Eb">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #F39C12;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-ellipsis-h fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">その他：</span>
+                <span class="Eb-price text-right float-right">￥[[ other ]] </span>
+            </div>
+            <div class="Eb">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #6D4C41;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-home fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">家賃：</span>
+                <span class="Eb-price text-right float-right">￥[[ rent ]] </span>
+            </div>
+            <div class="Eb">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #F4511E;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-graduation-cap fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">奨学金：</span>
+                <span class="Eb-price text-right float-right">￥[[ scholar ]] </span>
+            </div>
+            <div class="Eb">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #D81B60;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-lightbulb fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">光熱費：</span>
+                <span class="Eb-price text-right float-right">￥[[ utility ]] </span>
+            </div>
+            <div class="Eb Eb-last">
+                <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #00897B;">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-mobile-alt fa-stack-1x fa-inverse"></i>
+                </span>
+                <span class="Eb-item">通信費：</span>
+                <span class="Eb-price text-right float-right">￥[[ commu ]] </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- pythonからjsへデータの受け渡し用 -->
+    <input type="hidden" id="chart_income" value="{{ month.income }}">
+    <input type="hidden" id="chart_food" value="{{ month.food_ex }}">
+    <input type="hidden" id="chart_daily" value="{{ month.daily_ex }}">
+    <input type="hidden" id="chart_hobby" value="{{ month.hobby_ex }}">
+    <input type="hidden" id="chart_transport" value="{{ month.transport_ex }}">
+    <input type="hidden" id="chart_other" value="{{ month.other_ex }}">
+    <input type="hidden" id="chart_last" value="{{ month.last_ex }}">
+    <input type="hidden" id="chart_rent" value="{{ month.rent_cost }}">
+    <input type="hidden" id="chart_scholar" value="{{ month.scholar }}">
+    <input type="hidden" id="chart_utility" value="{{ month.utility_cost }}">
+    <input type="hidden" id="chart_commu" value="{{ month.commu }}">
+    <input type="hidden" id="chart_month" value="{{ month.month }}">
+
+</div>
+
+<!-- <script src="{{ url_for('static', filename='js/m-chart.js')}}"></script> -->
+{% endblock %}

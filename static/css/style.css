@@ -1,16 +1,36 @@
 @charset 'utf-8';
-
-input{
+input {
     -webkit-appearance: none;
-    }
+}
 
-* {
-    font-family: '遊ゴシック', 'メイリオ', 'Meiryo', sans-serif'
-
+*, h1, h2, h3, h4, h5 {
+    font-family: '遊ゴシック', 'メイリオ', 'Meiryo', 'sans-serif';
 }
 
 [v-cloak] {
     display: none;
+}
+
+/* nav-bar*/
+
+.create-report {
+    font-weight: 400 !important;
+}
+
+.nav_icon {
+    color: #fff;
+}
+
+.modal-backdrop {
+    z-index: 0;
+}
+
+.btn-dd {
+    background-color: #343A40;
+}
+
+.dropdown-toggle::after {
+    color: #fff;
 }
 
 .upd_date {
@@ -104,6 +124,24 @@ body {
     background-color: #f39c12;
     color: white;
 }
+
+.rent {
+    background-color: #6D4C41;
+    color: white;
+}
+
+.scholar {
+    background-color: #F4511E;
+    color: white;
+}
+
+.utility {
+    background-color: #D81B60;
+    color: white;
+}
+
+.commu {background-color: #00897B;
+    color: white;}
 
 /* for calc design */
 
@@ -334,8 +372,6 @@ textbox {
     margin-left: -8px;
 } */
 
-
-
 .calc_disp {
     width: 205px;
     background: #5b5b5b;
@@ -425,21 +461,78 @@ textbox {
     background: #d37e00;
 }
 
+/* 
+ * report page 
+ */
 
+.col-sm-2, .col-sm-5 {
+    max-width: 100% !important;
+}
+
+.my-color {
+    color: #343A40;
+}
+
+.Eb-block {
+    height: 100% !important;
+    padding-bottom: 10px;
+}
+
+.Eb-body {
+    font-size: 1.0em !important;
+    padding-top: 25px;
+    padding-bottom: 0;
+}
+
+.Eb {
+    font-size: 1.2em;
+    border-bottom: 1px solid #919191;
+    padding-bottom: 9px;
+    margin-bottom: 9px;
+}
+
+.Eb-last {
+    border-bottom: none;
+}
 
 @media screen and (max-width: 480px) {
+
+    .arrow-left,.arrow-right {
+        font-size: 0.7em;
+        width: 30px !important;
+    }
+
+    .arrow-left {
+        margin-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .arrow-right {
+        padding-left: 10px !important;
+        margin-right: -5px !important;
+        padding-right: 0px !important;
+    }
+
+    .Eb-block {
+        max-width: 350px;
+    }
+
+    .chart {
+        max-width: 280px !important;
+        padding-right: 0px !important;
+        margin-right: -20px !important;
+        padding-left: 10px !important;
+    }
+
     .calc_disp {
         margin-left: 2px;
     }
-
     .btn-primary:hover {
         background-color: #17A2B8;
     }
-
     .command {
         border-radius: 0%;
     }
-
     .plus {
         margin-top: 15px;
         margin-left: 10px;
@@ -477,7 +570,6 @@ textbox {
     div.income {
         width: 21.8rem;
     }
-
     /* card position*/
     .food-par {
         position: absolute;
@@ -519,7 +611,6 @@ textbox {
         position: absolute;
         top: 1464px;
     }
-
     .upd_date {
         padding-left: 10px;
         position: absolute;
@@ -527,7 +618,6 @@ textbox {
         margin-bottom: 20px;
         padding-bottom: 20px;
     }
-
     .last-card {
         margin-bottom: 20px;
     }
@@ -553,5 +643,17 @@ textbox {
     .fother {
         border: 1px solid #df8c06 !important;
     }
+    .frent {
+        border: 1px solid #6D4C41 !important;
+    }
+    .fscholar {
+        border: 1px solid #F4511E !important;
+    }
+    .futility {
+        border: 1px solid #D81B60 !important;
+    }
+    .fcommu {
+        border: 1px solid #00897B !important;
+    }
 }
-}
+
