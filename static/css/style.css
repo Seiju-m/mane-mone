@@ -498,7 +498,7 @@ textbox {
 @media screen and (max-width: 480px) {
 
     body {
-    font-family: '遊ゴシック', 'メイリオ', 'Meiryo';
+    font-family: '遊ゴシック', 'メイリオ', 'Meiryo' !important;
 }
 
     .arrow-left,.arrow-right {
