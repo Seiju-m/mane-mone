@@ -80,13 +80,13 @@ var createReport = new Vue({
                                         'success'
                                     )
                                 } else {
+                                    $.LoadingOverlay("hide");
                                     Swal.fire(
                                         '<b>作成完了!</b>',
                                         '',
                                         'success'
                                     ),
                                     // report.last = last,
-                                    $.LoadingOverlay("hide");
                                 }
                             }
                             console.log("response" + JSON.stringify(response))

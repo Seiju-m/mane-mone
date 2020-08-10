@@ -50,7 +50,6 @@ CREATE TABLE account
 
 INSERT INTO account(income, food_ex, food_st, daily_ex, daily_st,hobby_ex,hobby_st,transport_ex,transport_st,other_ex, other_st,last_ex,rent_cost,scholar,utility_cost,commu,update_date,myuser) VALUES (181608, 0, 20000, 0, 5000, 0, 20000, 0, 25000, 0, 5000,  0,54860,16700,0,0,'----/--/-- --:--:--','tfjkv');
 
-
 CREATE TABLE monthly
 (
   income integer,
@@ -59,7 +58,7 @@ CREATE TABLE monthly
   hobby_ex integer,
   transport_ex integer,
   other_ex integer,
-  last_ex integer,
+  last_ex character(20),
   rent_cost integer,
   scholar integer,
   utility_cost integer,
@@ -68,7 +67,7 @@ CREATE TABLE monthly
 );
 
 
-INSERT INTO monthly(income, food_ex, daily_ex, hobby_ex,transport_ex,other_ex, last_ex,rent_cost,scholar,utility_cost,commu,month) VALUES (0, 0,  0, 0,0,0,0,0,0,0,0,202000);
+INSERT INTO monthly(income, food_ex, daily_ex, hobby_ex,transport_ex,other_ex, last_ex,rent_cost,scholar,utility_cost,commu,month) VALUES (0, 0,  0, 0,0,0,'0',0,0,0,0,202000);
 
 
 CREATE TABLE sample
