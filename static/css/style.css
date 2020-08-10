@@ -498,7 +498,7 @@ textbox {
 @media screen and (max-width: 480px) {
 
     body {
-    font-family: '遊ゴシック', 'メイリオ', 'Meiryo', 'ヒラギノ角ゴ Pro W3', 'sans-serif' !important;
+    font-family: 'sans-serif';
 }
 
     .arrow-left,.arrow-right {
