@@ -498,8 +498,8 @@ textbox {
 @media screen and (max-width: 480px) {
 
     *, h1, h2, h3, h4, h5 {
-        font-family: '遊ゴシック', 'メイリオ', 'Meiryo', 'sans-serif' !important;
-    }
+    font-family: '遊ゴシック', 'メイリオ', 'Meiryo', 'sans-serif';
+}
 
     .arrow-left,.arrow-right {
         font-size: 0.7em;
