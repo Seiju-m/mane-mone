@@ -85,8 +85,9 @@ var createReport = new Vue({
                                         '<b>作成完了!</b>',
                                         '',
                                         'success'
-                                    ),
+                                    )
                                     // report.last = last,
+                                   
                                 }
                             }
                             console.log("response" + JSON.stringify(response))
