@@ -3,9 +3,14 @@ input {
     -webkit-appearance: none;
 }
 
-*, h1, h2, h3, h4, h5 {
-    font-family: '遊ゴシック', 'メイリオ', 'Meiryo', 'sans-serif';
-}
+body {
+    font-family: "Helvetica Neue",
+      Arial,
+      "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans",
+      Meiryo,
+      sans-serif;
+  }
 
 [v-cloak] {
     display: none;
@@ -509,9 +514,7 @@ textbox {
 }
 
 @media screen and (max-width: 480px) {
-    body {
-        font-family: 'sans-serif' !important;
-    }
+
 
     .user-icon {
         position: fixed;
