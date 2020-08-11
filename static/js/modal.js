@@ -41,7 +41,7 @@ var createReport = new Vue({
             Swal.fire({
                 // title: 'Are you sure?',
                 html:
-                    '<b>2020年07月のレポートを作成しますか？</b>',
+                    '<b>' + now_month.slice(0,4) + '年' + now_month.slice(-2) + '月のレポートを作成しますか？</b>',
                 icon: 'question',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',

@@ -15,6 +15,17 @@ input {
 
 .create-report {
     font-weight: 400 !important;
+    position: fixed;
+    right: 80px;
+}
+
+.create-report:before {
+    content: 'Create '
+}
+
+.user-icon {
+    position: fixed;
+    right: 20px;
 }
 
 .nav_icon {
@@ -140,8 +151,10 @@ body {
     color: white;
 }
 
-.commu {background-color: #00897B;
-    color: white;}
+.commu {
+    background-color: #00897B;
+    color: white;
+}
 
 /* for calc design */
 
@@ -496,38 +509,47 @@ textbox {
 }
 
 @media screen and (max-width: 480px) {
-
     body {
-    font-family: 'sans-serif' !important;
-}
+        font-family: 'sans-serif' !important;
+    }
 
-    .arrow-left,.arrow-right {
+    .user-icon {
+        position: fixed;
+        right: 7px;
+    }
+
+    .create-report {
+        font-weight: 400 !important;
+        position: fixed;
+        right: 65px;
+    }
+
+    .create-report:before {
+        content: ''
+    }
+    .arrow-left, .arrow-right {
         font-size: 0.7em;
         width: 30px !important;
     }
-
     .arrow-left {
         margin-left: 5px !important;
         padding-right: 5px !important;
     }
-
     .arrow-right {
         padding-left: 10px !important;
         margin-right: -5px !important;
         padding-right: 0px !important;
     }
-
     .Eb-block {
         max-width: 350px;
+        margin-bottom: 20px;
     }
-
     .chart {
         max-width: 280px !important;
         padding-right: 0px !important;
         margin-right: -20px !important;
         padding-left: 10px !important;
     }
-
     .calc_disp {
         margin-left: 2px;
     }
@@ -660,4 +682,3 @@ textbox {
         border: 1px solid #00897B !important;
     }
 }
-

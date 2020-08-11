@@ -15,6 +15,7 @@ login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = "secret"
 
+
 # ユーザーチェックに使用する辞書作成
 nested_dict = lambda: defaultdict(nested_dict)
 user_check = nested_dict()
