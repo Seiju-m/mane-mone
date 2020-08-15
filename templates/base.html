@@ -36,10 +36,10 @@
       Manage Money
     </a>
     <button class="btn btn-outline-light create-report" @click="createReport(`{{ data.c_last_ex_d }}`)">Report</button>
-
+    <i class="fas fa-question-circle nav_icon info_icon" @click="info()"></i>
     <!-- navbar items -->
     <div class="dropdown user-icon">
-      <button class="btn btn-dd dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      <button class="btn btn-dd dropdown-toggle user_btn" type="button" id="dropdownMenuButton" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
         <i class="fas fa-user-alt nav_icon"></i>
       </button>

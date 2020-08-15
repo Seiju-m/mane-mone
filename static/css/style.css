@@ -19,11 +19,22 @@ body {
     display: none;
 }
 
+.form-control, .btn {
+    min-height: 38px;
+    border-radius: 2px;
+}
+
+.btn {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
 /* nav-bar*/
 .create-report {
     font-weight: 400 !important;
     position: fixed;
-    right: 80px;
+    right: 117px;
 }
 .create-report:before {
     content: 'Create '
@@ -36,6 +47,11 @@ body {
     color: #fff;
 }
 
+.info_icon {
+    position: fixed;
+    right: 80px;
+}
+
 .btn-dd {
     background-color: #343A40;
 }
@@ -43,14 +59,7 @@ body {
 .dropdown-toggle::after {
     color: #fff;
 }
-
-
-
-
-
-.cat-icon {
-    margin-right: 3px;
-}
+/* login,logout form */
 
 .login-form {
     width: 340px;
@@ -62,29 +71,44 @@ body {
     background: #f7f7f7;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
     padding: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .login-form h2 {
     margin: 0 0 15px;
 }
 
-.form-control, .btn {
-    min-height: 38px;
-    border-radius: 2px;
+a.logout {
+    color: #fff;
 }
 
-.btn {
-    font-size: 15px;
-    font-weight: bold;
+/* card design */
+
+.cat-icon {
+    margin-right: 3px;
 }
 
 .card {
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.3);
+    width: 22rem;
+    height: 8rem;
+    position: relative;
 }
 
 .card-header {
     border-bottom: 1px solid #fff;
     color: white;
+    padding: 0.75rem 1.0rem;
+}
+
+.card-body {
+    font-size: 1.5em;
+}
+
+div.income {
+    font-size: 1.4em;
+    margin-left: 17px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 
 .fixed-ex {
@@ -93,7 +117,20 @@ body {
     background-color: #95a5a6;
 }
 
-/* card color*/
+.price {
+    position: absolute;
+    right: 25px;
+    bottom: 0;
+}
+
+.pay {
+    font-size: 0.6em;
+    color: #F0EBEB;
+    position: absolute;
+    bottom: 3px;
+}
+
+    /* card color*/
 
 .food {
     background-color: #c0392b;
@@ -145,7 +182,7 @@ body {
     color: white;
 }
 
-/* for calc design */
+    /* for calc design */
 
 .plus {
     margin-top: 15px;
@@ -156,16 +193,102 @@ body {
     padding-left: 160px;
 }
 
+
+input {
+    width: 50px;
+    height: 50px;
+}
+
+textbox {
+    width: 200px;
+    height: 50px;
+}
+
+
+/* calc */
+
+
+.calc_disp {
+    width: 205px;
+    background: #5b5b5b;
+    text-align: right;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 25px;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 0%;
+}
+
+
+
+/* .commands {
+    width: 204px;
+    background: #000;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 1px;
+}
+
+.command {
+    width: 52.0px;
+    height: 45px;
+    background: #ddd;
+    margin: 0 -4px 0px -1px;
+    text-align: center;
+    padding-top: 10px;
+    box-sizing: border-box;
+    font-size: 18px;
+    padding: 0 !important;
+    border: solid 1px #333;
+} */
+
+.co1 {
+    margin-right: -2px;
+    border-right: none;
+}
+
+.co2 {
+    margin-right: -3.0px;
+    border-right: none;
+    margin-left: -2.2px;
+}
+
+.co3 {
+    margin-right: -3.3px;
+    border-right: none;
+    margin-left: -1.5px;
+}
+
+.ra1, .ra2, .ra3, .ra4 {
+    border-top: none;
+}
+
+.is-ope {
+    background: orange;
+    color: #fff;
+}
+
+
+/* .command:active {
+    background: #bbb;
+}
+
+.command:nth-child(4n):active, .command.is-equal:active {
+    background: #d37e00;
+} */
+
+
+
+    /* modal */
+
 #modal {
     margin: 3vw;
 }
 
 i.fa-edit, i.far {
     cursor: pointer;
-}
-
-.card-header {
-    padding: 0.75rem 1.0rem;
 }
 
 .modal-mask {
@@ -236,10 +359,6 @@ i.fa-edit, i.far {
     font-size: 14px;
 }
 
-.login-form form {
-    border-top: 1px solid rgba(0, 0, 0, 0.125);
-}
-
 .modal-enter {
     opacity: 0;
 }
@@ -250,31 +369,6 @@ i.fa-edit, i.far {
 
 .modal-enter .modal-container, .modal-leave-active .modal-container {
     transform: translateY(30px);
-}
-
-a.logout {
-    color: #fff;
-}
-
-.per {
-    font-size: 0.6em;
-}
-
-div.income {
-    font-size: 1.4em;
-    margin-left: 17px;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
-}
-
-.toggle-off {
-    background-color: #27ae60;
-    border-color: #27ae60;
-    color: #fff;
-}
-
-.toggle-on {
-    background-color: #17A2B8;
-    border: none;
 }
 
 .btn-primary {
@@ -288,18 +382,6 @@ div.income {
     border-color: #17A2B8;
 }
 
-.w-m-toggle {
-    text-align: right;
-    padding-right: 10px;
-}
-
-.toggle.ios, .toggle-on.ios, .toggle-off.ios {
-    border-radius: 60rem;
-}
-
-.toggle.ios .toggle-handle {
-    border-radius: 1rem;
-}
 
 i.faa-float-i:before {
     font-size: 0.8em;
@@ -323,145 +405,37 @@ i.faa-float-i:before {
     width: 50%;
 }
 
-.card {
-    width: 22rem;
-    height: 8rem;
-    position: relative;
-}
+    /* toggle */
 
-div.card-body {
-    font-size: 1.5em;
-}
-
-.price {
-    position: absolute;
-    right: 25px;
-    bottom: 0;
-}
-
-.pay {
+.per {
     font-size: 0.6em;
-    color: #F0EBEB;
-    position: absolute;
-    bottom: 3px;
 }
 
-input {
-    width: 50px;
-    height: 50px;
+.toggle-off {
+    background-color: #27ae60;
+    border-color: #27ae60;
+    color: #fff;
 }
 
-textbox {
-    width: 200px;
-    height: 50px;
+.toggle-on {
+    background-color: #17A2B8;
+    border: none;
 }
 
-.conta {
-    display: table;
-    width: 100%;
-    background: #FFF;
-}
-
-.nav__item {
-    display: table-cell;
-    text-align: center;
-    vertical-align: middle;
-}
-
-/* calc */
-
-/* .command .co1 .ra4 {
-    margin-left: -8px;
-} */
-
-.calc_disp {
-    width: 205px;
-    background: #5b5b5b;
+.w-m-toggle {
     text-align: right;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    color: #fff;
-    font-size: 25px;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border-radius: 0%;
+    padding-right: 10px;
 }
 
-.calc_disp.flashing {
-    animation-name: flash;
-    animation-duration: .1s;
+.toggle.ios, .toggle-on.ios, .toggle-off.ios {
+    border-radius: 60rem;
 }
 
-@keyframes flash {
-    0% {
-        color: #5b5b5b;
-    }
-    90% {
-        color: #5b5b5b;
-    }
-    100% {
-        color: #fff;
-    }
+.toggle.ios .toggle-handle {
+    border-radius: 1rem;
 }
 
-.commands {
-    width: 204px;
-    background: #000;
-    display: flex;
-    flex-wrap: wrap;
-    padding-left: 1px;
-}
 
-.command {
-    width: 52.0px;
-    height: 45px;
-    background: #ddd;
-    margin: 0 -4px 0px -1px;
-    text-align: center;
-    padding-top: 10px;
-    box-sizing: border-box;
-    font-size: 18px;
-    padding: 0 !important;
-    border: solid 1px #333;
-}
-
-.co1 {
-    margin-right: -2px;
-    border-right: none;
-}
-
-.co2 {
-    margin-right: -3.0px;
-    border-right: none;
-    margin-left: -2.2px;
-}
-
-.co3 {
-    margin-right: -3.3px;
-    border-right: none;
-    margin-left: -1.5px;
-}
-
-.ra1, .ra2, .ra3, .ra4 {
-    border-top: none;
-}
-
-.is-ope {
-    background: orange;
-    color: #fff;
-}
-
-.command.is-2col {
-    flex-grow: 2;
-}
-
-.command:active {
-    background: #bbb;
-}
-
-.command:nth-child(4n):active, .command.is-equal:active {
-    background: #d37e00;
-}
 
 /* 
  * report page 
@@ -504,21 +478,28 @@ textbox {
     padding-bottom: 20px;
 }
 
-/****************************** for iPhone XS ******************************/
+/****************************** for iOS Device ******************************/
 
 @media screen and (max-width: 480px) {
     /* for ios input */
     input {
         -webkit-appearance: none;
     }
+    .user_btn {
+        padding-left: 0px;
+    }
     .user-icon {
         position: fixed;
         right: 7px;
     }
+    .info_icon {
+        position: fixed;
+        right: 63px;
+    }
     .create-report {
         font-weight: 400 !important;
         position: fixed;
-        right: 65px;
+        right: 95px;
     }
     .create-report:before {
         content: ''

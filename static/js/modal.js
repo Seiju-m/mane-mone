@@ -61,6 +61,22 @@ var createReport = new Vue({
                 }
             })
         },
+        info: function (last) {
+            Swal.fire({
+                html: '<h3>Operation Rule</h3>' + 
+                '<div align="left" style="padding-left: 30px;">' +
+                 '<br>【収入】交通費を含める' + 
+                 '<br>【食費】Suicaでの使用分も計上する' +
+                 '<br>【交通費】通勤代も計上する' +
+                 '<br>【その他】美容院・トラノコ手数料など' +
+                 '<br>【通信費】スマホ代・J-COM' +
+                 '<br>【残高】トラノコへの投資も含む' +
+                 '</div>' ,
+                icon: 'question',
+                confirmButtonColor: '#3085d6',
+                confirmButtonText: 'OK',
+            })
+        },
     }
 })
 
