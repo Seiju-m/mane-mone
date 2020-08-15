@@ -51,12 +51,11 @@ body {
 
 
 
-/* main component */
+/* */
 
 .cat-icon {
     margin-right: 3px;
 }
-
 
 .login-form {
     width: 340px;
@@ -381,7 +380,7 @@ textbox {
 } */
 
 .calc_disp {
-    width: 205px;
+    width: 211px;
     background: #5b5b5b;
     text-align: right;
     border: 1px solid #000;
@@ -389,7 +388,7 @@ textbox {
     color: #fff;
     font-size: 25px;
     padding: 5px 10px;
-    margin-left: 5px;
+    margin-left: 4px;
     border-radius: 0%;
 }
 
