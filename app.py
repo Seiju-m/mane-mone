@@ -8,13 +8,11 @@ import datetime
 from dateutil.relativedelta import relativedelta
 from flask_sqlalchemy import SQLAlchemy
 from lib import calc, user, db_ope
-# from test_db import init_db_func,reg_account_func
 
 app = Flask(__name__)
 login_manager = LoginManager()
 login_manager.init_app(app)
 app.config['SECRET_KEY'] = "secret"
-
 
 # ユーザーチェックに使用する辞書作成
 nested_dict = lambda: defaultdict(nested_dict)
@@ -23,20 +21,11 @@ for i in user.users.values():
     user_check[i.name]["password"] = i.password
     user_check[i.name]["id"] = i.id
 
-# nextをクリックで、axiosでここまで飛ばし、もともと日付から取得した
-# 変数に1増減させて変数を更新する。
-# その値でdbから引っ張る、なければありませんを表示（からのぱい？）
-
 
 @login_manager.user_loader
 def load_user(user_id):
     return user.users.get(int(user_id))
 
-# ログインしないと表示されないパス
-# @app.route('/mana-mone/')
-# @login_required
-# def protected():
-#     return render_template("mana-mone.html")
 
 # ログインパス
 @app.route('/', methods=["GET", "POST"])
@@ -52,12 +41,14 @@ def login():
     else:
         return render_template("login.html")
 
+
 @app.route('/main/')
 @login_required
 def main():
     data = db_ope.get_account()
     n_data = calc.calc(data)
     return render_template("mana-mone.html",  data=n_data)
+
 
 # ログアウトパス
 @app.route('/logout/')
@@ -66,10 +57,10 @@ def logout():
     logout_user()
     return render_template("logout.html")
 
+
 # initialize monthly
 dt_now = datetime.datetime.now()
 default_month = str(dt_now.year) + str((dt_now - relativedelta(months=1)).strftime('%m'))
-# new_month = default_month
 
 # 月次レポート
 @app.route('/monthly/', methods=["GET"])
@@ -91,13 +82,13 @@ def monthly():
                 self.utility_cost= 0
                 self.commu= 0
                 self.month= 0
-
         month = Month()
 
     data = db_ope.get_account()
     n_data = calc.calc(data)
 
     return render_template("monthly.html", month=month, data=n_data)
+
 
 @app.route('/prev-month/', methods=["POST"])
 @login_required
@@ -180,12 +171,8 @@ def next_month():
 @app.route('/createReport/', methods=["POST"])
 @login_required
 def createReport():
-    #try:
-    print("-----------------------------")
     month = request.json.get('month')
     last = request.json.get('last')
-    print(last)
-    # month = db_ope.query_month(int(request.json.get('month')))
     month_check = db_ope.query_month(month)
     if month_check is None:
         data = db_ope.get_account()

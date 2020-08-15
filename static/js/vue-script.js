@@ -96,8 +96,6 @@ var md = new Vue({
          this.EnterFlag = true;
       },
       clear: function (food_ex) {
-         // var obj = document.getElementById("result");
-         // obj.value == "0";
          document.getElementById("result").value = 0
       },
       clear2: function (food_ex) {
@@ -226,123 +224,9 @@ var md = new Vue({
             .catch(error => {
                console.log("error" + error)
             })
-         console.log("submitted")
       },
    }
 })
 
-// var createReport = new Vue({
-//    delimiters: ['[[', ']]'],
-//    el: '#navbar',
-//    data: {
-//       count: 0,
-//       hello: 'world',
-//       formData: {
-//          month: 000000
-//      },
-//    },
-//    methods: {
-//       createReport: function (data) {
-//          // this.formData.cat = cat
-//          console.log("formdata" + JSON.stringify(this.formData))
-//          console.log("dataa" + data.food_ex)
-//          let now_month = sessionStorage.getItem('month')
-//          console.log("now_month" + now_month)
-//          this.formData.month = now_month
-//          $.LoadingOverlay("show");
-//          axios.post('/createReport', this.formData)
-//             .then(response => {
-//                if(response.data.status_code == '500'){
-//                   console.log("already data")
-//                } else {
-//                   if(path == '/monthly/'){
-//                      reloads(response.data)
-//                   console.log("reload")
-//                   }
-//                }
-//                console.log("response" + JSON.stringify(response))
-//                // setTimeout(() => {
-//                $.LoadingOverlay("hide");
-//                this.showModal = false
-//                // document.location.reload()
-//                // }, 3000)
-//             })
-//             .catch(error => {
-//                console.log("error" + error)
-//             })
-//          console.log("submitted")
-//       },
-//    }
-// })
 
 
-var app = new Vue({
-   delimiters: ['[[', ']]'],
-   el: '#app',
-   data: {
-      count: 0,
-      hello: 'world',
-   },
-   methods: {
-      plus: function () {
-         this.count++
-      }
-   }
-})
-
-var app2 = new Vue({
-   delimiters: ['[[', ']]'],
-   el: '#edits',
-   data: {
-   },
-   methods: {
-      edit: function () {
-         console.log("test")
-         app.count++
-      }
-   }
-})
-
-
-
-// var wm_toggle = new Vue({
-//    delimiters: ['[[', ']]'],
-//    el: '#w-m-toggle',
-//    data: {
-//       checked: true
-//    },
-//    methods: {
-//       setEditEnable: function () {
-//          console.log("toggleee")
-//       }
-//    }
-// })
-
-
-// var fs = new Vue({
-//    delimiters: ['[[', ']]'],
-//    el:'#food_submit',
-//    methods: {
-//       submit: function() {
-//          console.log("submitted")
-//       }
-//    }
-// })
-
-// var EnterFlag = false;
-
-// function disp(n){
-//     var obj = document.getElementById("result");
-//     obj.value += n;
-// }
-
-// function enter(){
-//     var obj = document.getElementById("result");
-//     obj.value = eval(obj.value);
-//     EnterFlag = true;
-// }
-
-// function clear(){
-//     var obj = document.getElementById("result");
-//     obj.value == "0";
-// }

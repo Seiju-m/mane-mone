@@ -1,13 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-
-
 <div id="report" v-cloak>
-
     <h3 class="text-center">[[ title_month ]]</h3>
     <h5 class="text-center">貯金額：￥[[ last ]]</h5>
-
-
 
     <div class="container center-block">
         <div class="row center-block">
@@ -22,13 +17,10 @@
             </div>
         </div>
     </div>
-
     <br>
-
     <div class="mx-auto card Eb-block" style="width: 400px;">
         <div class="card-body Eb-body" style="height: 100%;">
             <div class="Eb">
-                <!-- <i class="fas fa-utensils  fa-fw cat-icon"></i> -->
                 <span class="fa-stack fa-lg" style="font-size: 0.8em; color: #C0392B;">
                     <i class="fa fa-circle fa-stack-2x"></i>
                     <i class="fas fa-utensils fa-stack-1x fa-inverse"></i>
@@ -118,6 +110,4 @@
     <input type="hidden" id="chart_month" value="{{ month.month }}">
 
 </div>
-
-<!-- <script src="{{ url_for('static', filename='js/m-chart.js')}}"></script> -->
 {% endblock %}

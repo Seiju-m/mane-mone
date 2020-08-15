@@ -1,43 +1,39 @@
 @charset 'utf-8';
-input {
-    -webkit-appearance: none;
+
+/* .modal-backdrop {
+    z-index: 0;
+} */
+
+html {
+    margin-bottom: 40px;
 }
 
 body {
-    font-family: "遊ゴシック",
-      Meiryo,
-      "Hiragino Kaku Gothic ProN",
-      "Hiragino Sans",
-      sans-serif;
-  }
+    font-family: "遊ゴシック", Meiryo, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    background-color: #F5F5F5;
+    margin-top: 70px;
+}
 
+/* bug fix for vue.js loading */
 [v-cloak] {
     display: none;
 }
 
 /* nav-bar*/
-
 .create-report {
     font-weight: 400 !important;
     position: fixed;
     right: 80px;
 }
-
 .create-report:before {
     content: 'Create '
 }
-
 .user-icon {
     position: fixed;
     right: 20px;
 }
-
 .nav_icon {
     color: #fff;
-}
-
-.modal-backdrop {
-    z-index: 0;
 }
 
 .btn-dd {
@@ -48,20 +44,9 @@ body {
     color: #fff;
 }
 
-.upd_date {
-    padding-left: 10px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-}
 
-html {
-    margin-bottom: 40px;
-}
 
-body {
-    background-color: #F5F5F5;
-    margin-top: 70px;
-}
+
 
 .cat-icon {
     margin-right: 3px;
@@ -512,20 +497,29 @@ textbox {
     border-bottom: none;
 }
 
+/* last update date */
+.upd_date {
+    padding-left: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+/****************************** for iPhone XS ******************************/
+
 @media screen and (max-width: 480px) {
-
-
+    /* for ios input */
+    input {
+        -webkit-appearance: none;
+    }
     .user-icon {
         position: fixed;
         right: 7px;
     }
-
     .create-report {
         font-weight: 400 !important;
         position: fixed;
         right: 65px;
     }
-
     .create-report:before {
         content: ''
     }
