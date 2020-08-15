@@ -410,7 +410,7 @@ textbox {
 }
 
 .commands {
-    width: 204px;
+    width: 208px;
     background: #000;
     display: flex;
     flex-wrap: wrap;
@@ -427,11 +427,11 @@ textbox {
     box-sizing: border-box;
     font-size: 18px;
     padding: 0 !important;
-    border: solid 1px #333;
+    /* border: solid 1px #333; */
 }
 
 .co1 {
-    margin-right: -2px;
+    margin-right: -2.0px;
     border-right: none;
 }
 
@@ -446,6 +446,7 @@ textbox {
     border-right: none;
     margin-left: -1.5px;
 }
+
 
 .ra1, .ra2, .ra3, .ra4 {
     border-top: none;

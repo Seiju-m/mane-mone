@@ -82,3 +82,5 @@ CREATE TABLE sample
 WITH (
   OIDS=FALSE
 );
+
+rgb(118, 118, 118), rgb(195, 195, 195))

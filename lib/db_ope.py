@@ -19,7 +19,7 @@ DB_NAME = 'dar8qtfcfi65mk'
 # USER = 'postgres'
 # PASSWORD = 'Seiju7479'
 # HOST = '127.0.0.1'
-# PORT = '5432'
+# PORT = '5432' 
 # DB_NAME = 'manage3'
 
 ## connect info
