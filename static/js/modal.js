@@ -15,7 +15,7 @@ var createReport = new Vue({
                 html: '<b>' + now_month.slice(0,4) + '年' + now_month.slice(-2) + '月のレポートを作成しますか？</b>',
                 icon: 'question',
                 showCancelButton: true,
-                confirmButtonColor: '#3085d6',
+                confirmButtonColor: '#17A2B8',
                 cancelButtonColor: '#d33',
                 confirmButtonText: '作成',
                 cancelButtonText: 'キャンセル'
@@ -30,11 +30,11 @@ var createReport = new Vue({
                             if (response.data.status_code == '500') {
                                 console.log("already data")
                                 $.LoadingOverlay("hide");
-                                Swal.fire(
-                                    '',
-                                    '<b>既にレポートが存在しています</b>',
-                                    'error'
-                                )
+                                Swal.fire({
+                                    html:'<b>既にレポートが存在しています</b>',
+                                    icon:'error',
+                                    confirmButtonColor: '#17A2B8',
+                                })
                             } else {
                                 if (path == '/monthly/') {
                                     reloads(response.data)
@@ -63,17 +63,17 @@ var createReport = new Vue({
         },
         info: function (last) {
             Swal.fire({
-                html: '<h3>Operation Rule</h3>' + 
-                '<div align="left" style="padding-left: 30px;">' +
-                 '<br>【収入】交通費を含める' + 
-                 '<br>【食費】Suicaでの使用分も計上する' +
-                 '<br>【交通費】通勤代も計上する' +
-                 '<br>【その他】美容院・トラノコ手数料など' +
-                 '<br>【通信費】スマホ代・J-COM' +
-                 '<br>【残高】トラノコへの投資も含む' +
+                html: '<h3>Operation Rule</h3> <br>' + 
+                '<div align="left" style="padding-left: 30px;" class="info-box">' +
+                 '<div class="info-text">【収入】交通費を含める</div>' + 
+                 '<div class="info-text">【食費】Suicaでの使用分も計上する</div>' +
+                 '<div class="info-text">【交通費】通勤代も計上する</div>' +
+                 '<div class="info-text">【その他】美容院・トラノコ手数料など</div>' +
+                 '<div class="info-text">【通信費】スマホ代・J-COM</div>' +
+                 '<div class="info-text">【残高】トラノコへの投資も含む</div>' +
                  '</div>' ,
                 icon: 'question',
-                confirmButtonColor: '#3085d6',
+                confirmButtonColor: '#17A2B8',
                 confirmButtonText: 'OK',
             })
         },

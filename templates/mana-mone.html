@@ -38,7 +38,7 @@
     </div>
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-3 food-par">
+        <div class="food-par">
             <div class="card fcard">
                 <div class="card-header food">
                     <i class="fas fa-utensils  fa-fw cat-icon"></i>食費（設定：￥{{ data.food_st }}）
@@ -56,7 +56,7 @@
             </div>
         </div>
         <div class="col-sm-1"></div>
-        <div class="col-sm-3 rent-par">
+        <div class="rent-par">
             <div class="card frent">
                 <div class="card-header rent">
                     <i class="fas fa-home  fa-fw cat-icon"></i>家賃
@@ -72,7 +72,7 @@
     <br>
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-3 daily-par">
+        <div class="daily-par">
             <div class="card fdaily">
                 <div class="card-header daily">
                     <i class="fas fa-shopping-bag  fa-fw cat-icon"></i>日用品（設定：￥{{ data.daily_st }}）
@@ -90,7 +90,7 @@
             </div>
         </div>
         <div class="col-sm-1"></div>
-        <div class="col-sm-3 scholar-par">
+        <div class="scholar-par">
             <div class="card fscholar">
                 <div class="card-header scholar">
                     <i class="fas fa-graduation-cap  fa-fw cat-icon"></i>奨学金
@@ -106,7 +106,7 @@
     <br>
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-3 hobby-par">
+        <div class="hobby-par">
             <div class="card fhobby">
                 <div class="card-header hobby">
                     <i class="fas fa-gamepad  fa-fw cat-icon"></i>趣味・娯楽（設定：￥{{ data.hobby_st }}）
@@ -124,7 +124,7 @@
             </div>
         </div>
         <div class="col-sm-1"></div>
-        <div class="col-sm-3 util-par">
+        <div class="util-par">
             <div class="card futility">
                 <div class="card-header utility">
                     <i class="fas fa-lightbulb  fa-fw cat-icon"></i>光熱費
@@ -140,7 +140,7 @@
     <br>
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-3 transport-par">
+        <div class="transport-par">
             <div class="card ftransport">
                 <div class="card-header transport">
                     <i class="fas fa-subway fa-fw cat-icon"></i>交通費（設定：￥{{ data.transport_st }}）
@@ -159,7 +159,7 @@
 
         </div>
         <div class="col-sm-1"></div>
-        <div class="col-sm-3 commu-par">
+        <div class="commu-par">
             <div class="card fcommu">
                 <div class="card-header commu">
                     <i class="fas fa-mobile-alt  fa-fw cat-icon"></i>通信費
@@ -177,7 +177,7 @@
 
     <div class="row">
         <div class="col-sm-2"></div>
-        <div class="col-sm-3 other-par">
+        <div class="other-par">
             <div class="card fother">
                 <div class="card-header other">
                     <i class="fas fa-ellipsis-h fa-fw cat-icon"></i>その他（設定：￥{{ data.other_st }}）
@@ -196,7 +196,7 @@
 
         </div>
         <div class="col-sm-1"></div>
-        <div class="col-sm-3 last-par">
+        <div class="last-par">
             <div class="card flast">
                 <div class="card-header last">
                     <i class="fas fa-piggy-bank  fa-fw cat-icon"></i>残高
@@ -308,7 +308,7 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px"
+                                <input id="result" type="text" size="20"
                                     v-bind:value='[[ calc_obj ]]' class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.daily_ex }}`)"
@@ -380,7 +380,7 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px"
+                                <input id="result" type="text" size="20" 
                                     v-bind:value='[[ calc_obj ]]' class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
@@ -453,7 +453,7 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px"
+                                <input id="result" type="text" size="20" 
                                     v-bind:value='[[ calc_obj ]]' class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
@@ -525,7 +525,7 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px"
+                                <input id="result" type="text" size="20" 
                                     v-bind:value='[[ calc_obj ]]' class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
@@ -624,7 +624,7 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px"
+                                <input id="result" type="text" size="20" 
                                     v-bind:value='[[ calc_obj ]]' class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
@@ -693,7 +693,7 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" style="width:208px"
+                                <input id="result" type="text" size="20" 
                                     v-bind:value='[[ calc_obj ]]' class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
