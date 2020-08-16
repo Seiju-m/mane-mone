@@ -15,12 +15,12 @@
     <input type="hidden" id="chart_commu" value="{{ data.commu }}">
     <input type="hidden" id="chart_month" value="{{ data.month }}">
     <input type="hidden" id="no_data_flg" value="dummy">
-    
+
     <div class="w-m-toggle">
         <input type="checkbox" v-model="checked" data-toggle="toggle" data-style="ios" data-on="月" data-off="週"
             onchange="toggle_clicked(checked, `{{ data.c_food_ex }}`, `{{ data.c_daily_ex }}`, `{{ data.c_hobby_ex }}`, `{{ data.c_transport_ex }}`, `{{ data.c_other_ex }}`)">
     </div>
-    
+
     <div class="row">
         <div class="col-sm-2"></div>
         <div class="col-sm-1">収入</div>
@@ -146,14 +146,14 @@
                 <div class="card-header transport">
                     <i class="fas fa-subway fa-fw cat-icon"></i>交通費（設定：￥{{ data.transport_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
-                    @click="t_edit(`{{ data.transport_st }}`,`{{ data.c_transport_ex }}`)"></i>
+                        @click="t_edit(`{{ data.transport_st }}`,`{{ data.c_transport_ex }}`)"></i>
                 </div>
                 <div class="card-body transport">
                     <p class="pay">使用 ￥{{ data.transport_ex_d }}</p>
                     <p class="price">
                         <span v-if="checked">￥{{ data.c_transport_ex_d }}</span>
-                    <span v-else>￥[[ transport_data ]]</span>
-                    /<span class="per">[[ per ]]</span>
+                        <span v-else>￥[[ transport_data ]]</span>
+                        /<span class="per">[[ per ]]</span>
                     </p>
                 </div>
             </div>
@@ -166,7 +166,7 @@
                     <i class="fas fa-mobile-alt  fa-fw cat-icon"></i>通信費
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
                         @click="c_edit(`{{ data.commu }}`)"></i>
-                </div> 
+                </div>
                 <div class="card-body commu">
                     <p class="price">￥{{ data.commu_d }}</p>
                 </div>
@@ -183,14 +183,14 @@
                 <div class="card-header other">
                     <i class="fas fa-ellipsis-h fa-fw cat-icon"></i>その他（設定：￥{{ data.other_st }}）
                     <i class="far fa-edit fa-pull-right faa-float animated-hover"
-                    @click="o_edit(`{{ data.other_st }}`,`{{ data.c_other_ex }}`)"></i>
+                        @click="o_edit(`{{ data.other_st }}`,`{{ data.c_other_ex }}`)"></i>
                 </div>
                 <div class="card-body other">
                     <p class="pay">使用 ￥{{ data.other_ex_d }}</p>
                     <p class="price">
                         <span v-if="checked">￥{{ data.c_other_ex_d }}</span>
-                    <span v-else>￥[[ other_data ]]</span>
-                    /<span class="per">[[ per ]]</span>
+                        <span v-else>￥[[ other_data ]]</span>
+                        /<span class="per">[[ per ]]</span>
                     </p>
                 </div>
             </div>
@@ -237,8 +237,8 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" 
-                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.food_ex }}`)"
                                     class="command co1 ra1" />
@@ -309,8 +309,8 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20"
-                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.daily_ex }}`)"
                                     class="command co1 ra1" />
@@ -381,8 +381,8 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" 
-                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
                                     class="command co1 ra1" />
@@ -437,12 +437,12 @@
         <div slot="body">
             <form v-on:submit.prevent="submit('transport')" id="transport_e">
                 <div class="form-group edit-form">
-                    設定額：<input v-bind:value="st_val" type="text" required="required" name="transport_st_e" id="transport_st_e"
-                        class="edit-input">
+                    設定額：<input v-bind:value="st_val" type="text" required="required" name="transport_st_e"
+                        id="transport_st_e" class="edit-input">
                 </div>
                 <div class="form-group edit-form form-inline used">
-                    使用額：<input v-bind:value="`{{ data.transport_ex }}`" type="text" required="required" name="transport_ex_e"
-                        id="transport_ex_e" class="edit-input">
+                    使用額：<input v-bind:value="`{{ data.transport_ex }}`" type="text" required="required"
+                        name="transport_ex_e" id="transport_ex_e" class="edit-input">
                     <p>
                         <a class="btn btn-primary plus" data-toggle="collapse" href="#multiCollapseExample1"
                             role="button" aria-expanded="true" aria-controls="multiCollapseExample1"
@@ -454,8 +454,8 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" 
-                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
                                     class="command co1 ra1" />
@@ -526,8 +526,8 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" 
-                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
                                     class="command co1 ra1" />
@@ -625,8 +625,8 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" 
-                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
                                     class="command co1 ra1" />
@@ -694,8 +694,8 @@
                     <div class="col">
                         <div class="collapse multi-collapse" id="multiCollapseExample1">
                             <div class="">
-                                <input id="result" type="text" size="20" 
-                                    v-bind:value='[[ calc_obj ]]' class="calc_disp" />
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
                                 <br />
                                 <input type="button" value="7" @click="disp(7,`{{ data.hobby_ex }}`)"
                                     class="command co1 ra1" />
@@ -748,10 +748,71 @@
         <h4 slot="header">収入</h4>
         <div slot="body">
             <form v-on:submit.prevent="submit('income')" id="income_f_e">
-                <div class="form-group edit-form">
+                <div class="form-group edit-form form-inline used">
                     金額：<input v-bind:value="st_val" type="text" required="required" name="income_e" id="income_e"
                         class="edit-input">
+                    <p>
+                        <a class="btn btn-primary plus" data-toggle="collapse" href="#multiCollapseExample1"
+                            role="button" aria-expanded="true" aria-controls="multiCollapseExample1"
+                            @click="clear_i(`{{ data.income }}`)">+</a>
+                    </p>
                 </div>
+
+
+                <!-- <div class="form-group edit-form form-inline used">
+                    使用額：<input v-bind:value="`{{ data.food_ex }}`" type="text" required="required" name="food_ex_e"
+                        id="food_ex_e" class="edit-input">
+                </div> -->
+
+                <!-- 電卓 -->
+                <div class="row">
+                    <div class="col">
+                        <div class="collapse multi-collapse" id="multiCollapseExample1">
+                            <div class="">
+                                <input id="result" type="text" size="20" v-bind:value='[[ calc_obj ]]'
+                                    class="calc_disp" />
+                                <br />
+                                <input type="button" value="7" @click="disp(7,`{{ data.income }}`)"
+                                    class="command co1 ra1" />
+                                <input type="button" value="8" @click="disp(8,`{{ data.income }}`)"
+                                    class="command co2 ra1" />
+                                <input type="button" value="9" @click="disp(9,`{{ data.income }}`)"
+                                    class="command co3 ra1" />
+                                <input type="button" value="C" @click="clear_i(`{{ data.income }}`)"
+                                    class="command co4 is-ope ra1" />
+                                <br />
+                                <input type="button" value="4" @click="disp(4,`{{ data.income }}`)"
+                                    class="command co1 ra2" />
+                                <input type="button" value="5" @click="disp(5,`{{ data.income }}`)"
+                                    class="command co2 ra2" />
+                                <input type="button" value="6" @click="disp(6,`{{ data.income }}`)"
+                                    class="command co3 ra2" />
+                                <input type="button" value="-" @click="disp('-',`{{ data.income }}`)"
+                                    class="command co4 is-ope ra2" />
+                                <br />
+                                <input type="button" value="1" @click="disp(1,`{{ data.income }}`)"
+                                    class="command co1 ra3" />
+                                <input type="button" value="2" @click="disp(2,`{{ data.income }}`)"
+                                    class="command co2 ra3" />
+                                <input type="button" value="3" @click="disp(3,`{{ data.income }}`)"
+                                    class="command co3 ra3" />
+                                <input type="button" value="+" @click="disp('+',`{{ data.income }}`)"
+                                    class="command co4 is-ope ra3" />
+                                <br />
+                                <input type="button" value="0" @click="disp(0,`{{ data.income }}`)"
+                                    class="command co1 ra4" />
+                                <input type="button" value="00" @click="disp0(00,`{{ data.income }}`)"
+                                    class="command co2 ra4" />
+                                <input type="button" value="←" @click="del()" class="command co3 ra4" />
+                                <input type="button" value="=" @click="enter_i()" data-toggle="collapse"
+                                    href="#multiCollapseExample1" class="command co4 is-ope ra4" />
+                                <br />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div>
                     <button type="submit" class="btn btn-primary edit-btn">完了</button>
                 </div>

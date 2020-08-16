@@ -182,6 +182,8 @@ def createReport():
         db_ope.add_month(data.income,data.food_ex,data.daily_ex,data.hobby_ex,
             data.transport_ex,data.other_ex,last,data.rent_cost,data.scholar,
             data.utility_cost,data.commu,int(month))
+        db_ope.reset_account()
+        
         res = jsonify({
             'status_code':200,
             'income': data.income,

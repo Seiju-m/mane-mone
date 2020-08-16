@@ -95,6 +95,11 @@ var md = new Vue({
          document.getElementById("transport_ex_e").value = eval(obj.value);
          this.EnterFlag = true;
       },
+      enter_i: function () {
+         var obj = document.getElementById("result");
+         document.getElementById("income_e").value = eval(obj.value);
+         this.EnterFlag = true;
+      },
       clear: function (food_ex) {
          document.getElementById("result").value = 0
       },
@@ -125,6 +130,10 @@ var md = new Vue({
       clear_o: function (food_ex) {
          this.calc_obj = 0;
          this.calc_obj = document.getElementById("other_ex_e").value + '+';
+      },
+      clear_i: function (food_ex) {
+         this.calc_obj = 0;
+         this.calc_obj = document.getElementById("income_e").value + '+';
       },
       f_edit: function (st_val, ex_val) {
          this.showModal = 1

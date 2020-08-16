@@ -107,6 +107,13 @@ def upd_ex(st, ex, cat):
     return 'res'
 
 
-
-
+def reset_account():
+    import db.models as db
+    data = db_session.query(db.Account).filter(db.Account.myuser == 'tfjkv').first()
+    db_session.delete(data)
+    dt_now = datetime.datetime.now(pytz.timezone('Asia/Tokyo'))
+    content = db.Account('tfjkv', 0, 0, 20000, 0, 5000, 0, 20000, 0, 25000, 0, 5000, 0, 54860, 16700, 0, 0, dt_now.strftime('%Y/%m/%d %H:%M:%S'))
+    db_session.add(content)
+    db_session.commit()
+    return 'res'
 
