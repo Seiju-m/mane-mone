@@ -66,6 +66,7 @@ default_month = str(dt_now.year) + str((dt_now - relativedelta(months=1)).strfti
 @app.route('/monthly/', methods=["GET"])
 @login_required
 def monthly():
+    no_data_flg = False
     month = db_ope.query_month(default_month)
     if month is None:
         class Month:
@@ -83,11 +84,13 @@ def monthly():
                 self.commu= 0
                 self.month= 0
         month = Month()
+        no_data_flg = True
+
 
     data = db_ope.get_account()
     n_data = calc.calc(data)
 
-    return render_template("monthly.html", month=month, data=n_data)
+    return render_template("monthly.html", month=month, data=n_data, flg=no_data_flg)
 
 
 @app.route('/prev-month/', methods=["POST"])

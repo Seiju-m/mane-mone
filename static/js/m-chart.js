@@ -10,6 +10,7 @@ let scholar = document.getElementById('chart_scholar').value;
 let utility = document.getElementById('chart_utility').value;
 let commu = document.getElementById('chart_commu').value;
 let month = document.getElementById('chart_month').value;
+let flg = document.getElementById('no_data_flg').value;
 
 let date = new Date();
 let now_month = date.getFullYear() + ("0" + (date.getMonth())).slice(-2);
@@ -116,24 +117,57 @@ var chart = c3.generate({
     },
 });
 
+if (flg == 'True') {
+    chart.unload({
+        ids: '食費'
+    });
+    chart.unload({
+        ids: '日用品'
+    });
+    chart.unload({
+        ids: '趣味・娯楽'
+    });
+    chart.unload({
+        ids: '交通費'
+    });
+    chart.unload({
+        ids: 'その他'
+    });
+    chart.unload({
+        ids: '家賃'
+    });
+    chart.unload({
+        ids: '奨学金'
+    });
+    chart.unload({
+        ids: '光熱費'
+    });
+    chart.unload({
+        ids: '通信費'
+    });
+}
+
+
+
+
 function reloads(data) {
     let month = sessionStorage.getItem('month');
     report.title_month = month.slice(0, 4) + '年' + month.slice(-2) + '月';
     report.last = data.last,
-    report.food = parseInt(data.food).toLocaleString(),
-    report.daily = parseInt(data.daily).toLocaleString(),
-    report.hobby = parseInt(data.hobby).toLocaleString(),
-    report.transport = parseInt(data.transport).toLocaleString(),
-    report.other = parseInt(data.other).toLocaleString(),
-    report.rent = parseInt(data.rent).toLocaleString(),
-    report.scholar = parseInt(data.scholar).toLocaleString(),
-    report.utility = parseInt(data.utility).toLocaleString(),
-    report.commu = parseInt(data.commu).toLocaleString(),
+        report.food = parseInt(data.food).toLocaleString(),
+        report.daily = parseInt(data.daily).toLocaleString(),
+        report.hobby = parseInt(data.hobby).toLocaleString(),
+        report.transport = parseInt(data.transport).toLocaleString(),
+        report.other = parseInt(data.other).toLocaleString(),
+        report.rent = parseInt(data.rent).toLocaleString(),
+        report.scholar = parseInt(data.scholar).toLocaleString(),
+        report.utility = parseInt(data.utility).toLocaleString(),
+        report.commu = parseInt(data.commu).toLocaleString(),
 
-    //元のグラフの削除
-    chart.unload({
-        ids: '食費'
-    });
+        //元のグラフの削除
+        chart.unload({
+            ids: '食費'
+        });
     chart.unload({
         ids: '日用品'
     });
@@ -181,20 +215,20 @@ function no_reloads(data) {
     let month = sessionStorage.getItem('month');
     report.title_month = month.slice(0, 4) + '年' + month.slice(-2) + '月';
     report.last = data.last,
-    report.food = parseInt(data.food).toLocaleString(),
-    report.daily = parseInt(data.daily).toLocaleString(),
-    report.hobby = parseInt(data.hobby).toLocaleString(),
-    report.transport = parseInt(data.transport).toLocaleString(),
-    report.other = parseInt(data.other).toLocaleString(),
-    report.rent = parseInt(data.rent).toLocaleString(),
-    report.scholar = parseInt(data.scholar).toLocaleString(),
-    report.utility = parseInt(data.utility).toLocaleString(),
-    report.commu = parseInt(data.commu).toLocaleString(),
+        report.food = parseInt(data.food).toLocaleString(),
+        report.daily = parseInt(data.daily).toLocaleString(),
+        report.hobby = parseInt(data.hobby).toLocaleString(),
+        report.transport = parseInt(data.transport).toLocaleString(),
+        report.other = parseInt(data.other).toLocaleString(),
+        report.rent = parseInt(data.rent).toLocaleString(),
+        report.scholar = parseInt(data.scholar).toLocaleString(),
+        report.utility = parseInt(data.utility).toLocaleString(),
+        report.commu = parseInt(data.commu).toLocaleString(),
 
         //元のグラフの削除
-    chart.unload({
-        ids: '食費'
-    });
+        chart.unload({
+            ids: '食費'
+        });
     chart.unload({
         ids: '日用品'
     });
