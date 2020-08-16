@@ -603,6 +603,7 @@ textbox {
     .other-par {
         position: absolute;
         top: 799px;
+        margin-left: 3px;
     }
     .rent-par {
         position: absolute;
