@@ -52,6 +52,7 @@ body {
 .info_icon {
     position: fixed;
     right: 80px;
+    cursor: pointer;
 }
 
 .btn-dd {
