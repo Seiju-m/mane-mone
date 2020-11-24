@@ -84,3 +84,5 @@ WITH (
 );
 
 rgb(118, 118, 118), rgb(195, 195, 195))
+
+update account set hobby_ex = 0;
