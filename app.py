@@ -99,8 +99,6 @@ def monthly():
 @login_required
 def prev_month():
     month = db_ope.query_month(int(request.json.get('month')))
-    print('--------- pre month ------------')
-    print(int(request.json.get('month')))
     if month is None:
         res = jsonify({
             'status_code':201,
@@ -140,8 +138,6 @@ def prev_month():
 @login_required
 def next_month():
     month = db_ope.query_month(int(request.json.get('month')))
-    print('--------- next month ------------')
-    print(int(request.json.get('month')))
     if month is None:
         res = jsonify({
             'status_code':201,

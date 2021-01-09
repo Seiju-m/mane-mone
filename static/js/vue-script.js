@@ -221,11 +221,9 @@ var md = new Vue({
                this.formData.st_val = document.forms.income_f_e.income_e.value
                break;
          }
-         console.log("formdata" + JSON.stringify(this.formData))
          $.LoadingOverlay("show");
          axios.post('/update', this.formData)
             .then(response => {
-               console.log("response" + response)
                // setTimeout(() => {
                $.LoadingOverlay("hide");
                this.showModal = false

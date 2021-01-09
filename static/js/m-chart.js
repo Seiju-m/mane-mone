@@ -57,7 +57,6 @@ var report = new Vue({
                         no_reloads(response.data)
                     } else {
                         reloads(response.data)
-                        console.log("response" + JSON.stringify(response.data))
                     }
                     $.LoadingOverlay("hide");
                 })
@@ -81,7 +80,6 @@ var report = new Vue({
                         no_reloads(response.data)
                     } else {
                         reloads(response.data)
-                        console.log("response" + JSON.stringify(response.data))
                     }
                     $.LoadingOverlay("hide");
                 })

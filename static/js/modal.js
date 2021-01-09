@@ -11,8 +11,6 @@ var createReport = new Vue({
     },
     methods: {
         createReport: function (last) {
-            console.log('testtttttttt')
-            console.log('now month:' + now_month)
             Swal.fire({
                 html: '<b>' + now_month.slice(0,4) + '年' + now_month.slice(-2) + '月のレポートを作成しますか？</b>',
                 icon: 'question',
@@ -55,7 +53,6 @@ var createReport = new Vue({
                                     )
                                 }
                             }
-                            console.log("response" + JSON.stringify(response))
                         })
                         .catch(error => {
                             console.log("error" + error)
