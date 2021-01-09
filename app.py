@@ -98,8 +98,9 @@ def monthly():
 @app.route('/prev-month/', methods=["POST"])
 @login_required
 def prev_month():
-    month = db_ope.query_month(int(request.json.get('month'))-1)
-    print('month;' + month)
+    month = db_ope.query_month(int(request.json.get('month')))
+    print('--------- pre month ------------')
+    print(int(request.json.get('month')))
     if month is None:
         res = jsonify({
             'status_code':201,
@@ -138,8 +139,9 @@ def prev_month():
 @app.route('/next-month/', methods=["POST"])
 @login_required
 def next_month():
-    month = db_ope.query_month(int(request.json.get('month'))+1)
-    print('month;' + str(month))
+    month = db_ope.query_month(int(request.json.get('month')))
+    print('--------- next month ------------')
+    print(int(request.json.get('month')))
     if month is None:
         res = jsonify({
             'status_code':201,
@@ -179,7 +181,6 @@ def next_month():
 @login_required
 def createReport():
     month = request.json.get('month')
-    print('month:' + str(month))
     last = request.json.get('last')
     month_check = db_ope.query_month(month)
     if month_check is None:

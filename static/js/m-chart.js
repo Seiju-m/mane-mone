@@ -13,8 +13,8 @@ let month = document.getElementById('chart_month').value;
 let flg = document.getElementById('no_data_flg').value;
 
 let date = new Date();
-date.setMonth(date.getMonth() - 1 );
-let now_month = date.getFullYear() + ("0" + (date.getMonth()+ 1)).slice(-2);
+date.setMonth(date.getMonth() - 1);
+let now_month = date.getFullYear() + ("0" + (date.getMonth() + 1)).slice(-2);
 
 
 
@@ -43,16 +43,13 @@ var report = new Vue({
         prev_month: function () {
             $.LoadingOverlay("show");
             let now_month = sessionStorage.getItem('month')
-            this.formData.month = now_month
 
-            // 年またぎ処理
-            const pattern = /01$/g;
-            const result = now_month.match(pattern);
-            if (result != null) {
-                sessionStorage['month'] = parseInt(now_month) - 89;
-            } else {
-                sessionStorage['month'] = parseInt(now_month) - 1;
-            }
+            let date = new Date(now_month.slice(0, 4), now_month.slice(-2), 01)
+            date.setMonth(date.getMonth() - 2);
+            let prev_month =date.getFullYear() + ("0" + (date.getMonth() + 1)).slice(-2);
+            sessionStorage['month'] = prev_month
+
+            this.formData.month = prev_month
 
             axios.post('/prev-month', this.formData)
                 .then(response => {
@@ -71,16 +68,12 @@ var report = new Vue({
         next_month: function () {
             $.LoadingOverlay("show");
             let now_month = sessionStorage.getItem('month')
-            this.formData.month = now_month
+ 
+             let date = new Date(now_month.slice(0, 4), now_month.slice(-2), 01)
+             let next_month =date.getFullYear() + ("0" + (date.getMonth() + 1)).slice(-2);
+             sessionStorage['month'] = next_month
 
-            // 年またぎ処理
-            const pattern = /12$/g;
-            const result = now_month.match(pattern);
-            if (result != null) {
-                sessionStorage['month'] = parseInt(now_month) + 89;
-            } else {
-                sessionStorage['month'] = parseInt(now_month) + 1;
-            }
+             this.formData.month = next_month
 
             axios.post('/next-month', this.formData)
                 .then(response => {
