@@ -139,7 +139,7 @@ def prev_month():
 @login_required
 def next_month():
     month = db_ope.query_month(int(request.json.get('month'))+1)
-    print('month;' + month)
+    print('month;' + str(month))
     if month is None:
         res = jsonify({
             'status_code':201,
@@ -179,7 +179,7 @@ def next_month():
 @login_required
 def createReport():
     month = request.json.get('month')
-    print('month:' + month)
+    print('month:' + str(month))
     last = request.json.get('last')
     month_check = db_ope.query_month(month)
     if month_check is None:
