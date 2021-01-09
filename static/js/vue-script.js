@@ -5,9 +5,9 @@ Vue.component('modal', {
 const path = location.pathname ;
 
 date = new Date();
+date.setMonth(date.getMonth() - 1 );
 now_month = date.getFullYear() + ("0" + (date.getMonth() + 1)).slice(-2);
-console.log('data.getmonth' + date.getMonth() + 1)
-console.log('now month2:' + now_month)
+
 sessionStorage['month'] = now_month;
 
 function toggle_clicked(checked, food_data, daily_data, hobby_data, transport_data, other_data) {
