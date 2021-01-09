@@ -1,3 +1,5 @@
+# coding: UTF-8
+
 import os
 from flask import Flask, request, Response, abort, render_template, redirect, jsonify, url_for
 from flask_login import LoginManager, login_user, logout_user, login_required
@@ -175,6 +177,7 @@ def next_month():
 @login_required
 def createReport():
     month = request.json.get('month')
+    print('month:' + month)
     last = request.json.get('last')
     month_check = db_ope.query_month(month)
     if month_check is None:

@@ -1,3 +1,4 @@
+# coding: UTF-8
 def calc(data):
   
     # 使用額の計算

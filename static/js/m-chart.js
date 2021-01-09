@@ -13,7 +13,8 @@ let month = document.getElementById('chart_month').value;
 let flg = document.getElementById('no_data_flg').value;
 
 let date = new Date();
-let now_month = date.getFullYear() + ("0" + (date.getMonth())).slice(-2);
+let now_month = date.getFullYear() + ("0" + (date.getMonth() + 1)).slice(-2);
+console.log("now monthhhhhhhh;" + now_month)
 sessionStorage['month'] = now_month;
 
 var report = new Vue({

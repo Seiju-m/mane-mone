@@ -1,3 +1,4 @@
+# coding: UTF-8
 from sqlalchemy import Column, String, Integer, Date
 from lib.db_ope import Base
 import datetime
